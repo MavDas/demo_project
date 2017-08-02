@@ -3,31 +3,31 @@
 The User Management Application is constructed with Admin, User and Seller.
 The application is based on a store set up.
 
-*Implementations:
-  Restricted Access using CanCanCan
-  User login using Devise
-  Bootstrap for basic front end using Foundation-rails
-  Seperate Admin Dashboard`
+* Implementations:
+    Restricted Access using CanCanCan
+    User login using Devise
+    Bootstrap for basic front end using Foundation-rails
+    Seperate Admin Dashboard`
 
 * Ruby version - 2.3.0p0
 
 * Rails version - 4.2.9
 
 * Gems installed: 
-  gem 'rails', '4.2.9'
-  gem 'sqlite3'
-  gem 'sass-rails', '~> 5.0
-  gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.1.0'
-  gem 'jquery-rails'
-  gem 'turbolinks'
-  gem 'jbuilder', '~> 2.0'
-  gem 'sdoc', '~> 0.4.0', group: :doc
-  gem 'devise'
-  gem 'cancancan', '~> 1.10'
-  gem 'foundation-rails'
+    gem 'rails', '4.2.9'
+    gem 'sqlite3'
+    gem 'sass-rails', '~> 5.0
+    gem 'uglifier', '>= 1.3.0'
+    gem 'coffee-rails', '~> 4.1.0'
+    gem 'jquery-rails'
+    gem 'turbolinks'
+    gem 'jbuilder', '~> 2.0'
+    gem 'sdoc', '~> 0.4.0', group: :doc
+    gem 'devise'
+    gem 'cancancan', '~> 1.10'
+    gem 'foundation-rails'
   
 * Databases created:
-  User
-  Item
-  Role
+    User
+    Item
+    Role
