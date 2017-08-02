@@ -10,10 +10,10 @@ The application is based on a store set up.
     Seperate Admin Dashboard`
 
 * Ruby version
-    - 2.3.0p0
+    - ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
 
 * Rails version
-    - 4.2.9
+    - Rails 4.2.9
 
 * Gems installed: 
     gem 'rails', '4.2.9'
