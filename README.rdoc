@@ -9,9 +9,11 @@ The application is based on a store set up.
     Bootstrap for basic front end using Foundation-rails
     Seperate Admin Dashboard`
 
-* Ruby version - 2.3.0p0
+* Ruby version
+    - 2.3.0p0
 
-* Rails version - 4.2.9
+* Rails version
+    - 4.2.9
 
 * Gems installed: 
     gem 'rails', '4.2.9'
