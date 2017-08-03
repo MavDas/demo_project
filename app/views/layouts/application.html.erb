@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Store App" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -19,6 +19,7 @@
   		</li>
   	</ul>
   <section class="top-bar-section">
+  
   	<ul class="right">
   		<li class="divider"></li>
   		<li><%= link_to "Browse Products", authenticated_root_path %></li>
@@ -38,13 +39,13 @@
   	<div class="small-4 columns">
       <% if user_signed_in? %>
   		  Signed in as <%= current_user.email %>.<br />Not you?
-  		  <%= link_to "Edit profile", edit_user_registration_path %>
-  		  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  		  <%= link_to "Edit profile", edit_user_registration_path , class: "button info tiny" %>
+  		  <%= link_to "Sign out", destroy_user_session_path, :method => :delete,  class: "button info tiny" %>
 		  <% else %>
-  		  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  		  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path,class: "button info tiny" %>
 		  <% end %>
 		  <% flash.each do |name, msg| %>
-  		  <%= content_tag :div, msg, class: "callout #{name}"%>
+  		  <%= content_tag :div, msg, class: "callout alert-callout-subtle #{name} large"%>
 		  <% end %>
     </div>
   </div>

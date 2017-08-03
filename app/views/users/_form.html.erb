@@ -1,6 +1,6 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div class="error">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
@@ -11,27 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :name, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :email,class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :email %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, placeholder: "Leave blank if unchanged" %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :password, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password, placeholder: "Leave blank if unchanged" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :role_id %><br>
-    <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}) %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :role_id, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :approved %><br>
-    <%= f.text_field :approved %>
+  <div class="row">
+    <div class="small-3 columns">
+      <%= f.label :approved,class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.text_field :approved %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="small-9 small-offset-3 columns">
+      <%= f.submit "Update User", class: "round button small" %>
+    </div>
   </div>
+
 <% end %>
