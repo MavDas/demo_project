@@ -1,19 +1,21 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   belongs_to :role
   has_many :items
   validates_presence_of :name
-
   before_save :assign_role
 
-  def after_confirmation
-    send_admin_mail
+  
+  def accept_invitation!
+    send_invite_mail
+    super
   end
-  def send_admin_mail
-    UserMailer.send_welcome_email(self).deliver_later
+
+  def after_confirmation
+    send_user_mail
   end
 
   def assign_role
@@ -53,4 +55,13 @@ class User < ActiveRecord::Base
     end
     recoverable
   end
+
+  private
+    def send_user_mail
+      UserMailer.send_welcome_email(self).deliver_later
+    end
+    
+    def send_invite_mail
+      UserMailer.send_admin_mail(self).deliver_later
+    end
 end

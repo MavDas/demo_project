@@ -12,43 +12,48 @@
   </head>
 
   <body>
-  <nav class="top-bar">
-  	<ul class="title-area">
-  		<li class="name">
-  			<h1><%= link_to "Store", authenticated_root_path %></a></h1>
-  		</li>
-  	</ul>
+  <nav class="top-bar" data-topbar role = "navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1 id="application-name">DEMO</h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
   <section class="top-bar-section">
-  
-  	<ul class="right">
-  		<li class="divider"></li>
-  		<li><%= link_to "Browse Products", authenticated_root_path %></li>
-  		<li class="divider"></li>
-  		<li><%= link_to "Admin Dash", users_path %></li>
-  		<li class="divider"></li>
-  		<li><%= link_to "Contact Us", welcome_show_path %></li>
-  	</ul>
+    <ul class="right">
+      <li class="has-dropdown menu-icon"><a href="#">Options</a>
+        <ul class="dropdown">
+          <% if user_signed_in? %>
+            <li> <%= link_to "Edit profile", edit_user_registration_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "sign in", new_user_session_path %></li>
+          <% end %>
+            <li><%= link_to "Contact Us", welcome_show_path %></li>
+        </ul>
+      </li>
+    </ul>
   </section>
- 	</nav>
+  </nav>
 
 
   <div class="row">
-  	<div class="small-8 columns">
-      <%= yield %>
-    </div>
-  	<div class="small-4 columns">
-      <% if user_signed_in? %>
-  		  Signed in as <%= current_user.email %>.<br />Not you?
-  		  <%= link_to "Edit profile", edit_user_registration_path , class: "button info tiny" %>
-  		  <%= link_to "Sign out", destroy_user_session_path, :method => :delete,  class: "button info tiny" %>
-		  <% else %>
-  		  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path,class: "button info tiny" %>
-		  <% end %>
-		  <% flash.each do |name, msg| %>
-  		  <%= content_tag :div, msg, class: "callout alert-callout-subtle #{name} large"%>
-		  <% end %>
+  	<div class="small-12 columns">
+      <%= yield :head%>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "callout alert-callout-subtle #{name} large"%>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
   </div>
+
+  <footer>
+    Copyright &copy; Jobs.com
+  </footer>
+  
 <%= javascript_include_tag "application" %>
 </body>
 </html>

@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: d486b31b192a2924b1913e080ad23460e6b96d31
+  specs:
+    jquery-datatables-rails (3.4.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,6 +68,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise_invitable (1.6.1)
+      actionmailer (>= 3.2.6)
+      devise (>= 3.2.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -173,8 +186,10 @@ DEPENDENCIES
   cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   devise
+  devise_invitable
   foundation-rails
   jbuilder (~> 2.0)
+  jquery-datatables-rails!
   jquery-rails
   rails (= 4.2.9)
   sass-rails (~> 5.0)

@@ -12,10 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require foundation
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
 
+$(document).ready(function(){
+$('#user-table').dataTable()
+	sPaginationType: "full_numbers"
+	bJQueryUI: true
+});
 

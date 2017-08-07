@@ -1,12 +1,13 @@
+<% content_for :head do %>
 <h1>Editing User</h1>
-
+<% end %>
 <%= render 'form' %>
 
 <div class="row">
 	<div class="small-6 columns">
-		<%= link_to 'Show', @user, class: "success button inline right" %>
+		<%= link_to 'Show', @user, class: "success radius button right inline tiny" %>
 	</div>
 	<div class="small-6 columns">
-		<%= link_to 'Back', users_path, class: "success button" %>
+		<%= link_to 'Back', users_path, class: "success radius button tiny" %>
 	</div>
 </div>

@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="small-12 columns" id="show">
 <p>
 	<strong>Email:</strong>
 	<%= @user.email %>
@@ -27,5 +29,8 @@
   <strong>No. times logged in:</strong>
   <%= @user.sign_in_count %>
 </p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), class: "tiny button radius info" %> |
+<%= link_to 'Back', users_path, class: "tiny button radius info" %>
+</div>
+</div>
+

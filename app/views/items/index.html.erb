@@ -1,7 +1,7 @@
-
+<% content_for :head do %>
 <h1>Listing Items</h1>
-
-<table>
+<% end %>
+<table class="small-12 columns">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,12 +19,12 @@
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= item.user.name %></td>
-        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Show', item , class: "button radius tiny info" %></td>
         <td> <% if can? :update, item %>
-              <%= link_to 'Edit', edit_item_path(item) %>
+              <%= link_to 'Edit', edit_item_path(item), class: "button radius tiny info" %>
             <% end %></td>
         <td><% if can? :destroy, item %>
-            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "button radius tiny alert" %>
             <% end %></td>
       </tr>
     <% end %>
@@ -32,6 +32,10 @@
 </table>
 
 <br>
+<div class="row">
+  <div class="small-12 columns center"> 
 <% if can? :create, Item %>
-  <%= link_to 'New Item', new_item_path, class: "small button" %>
+  <%= link_to 'New Item', new_item_path, class: "radius button tiny success" %>
 <% end %>
+  </div>
+</div>

@@ -10,8 +10,39 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require dataTables/jquery.dataTables
+ *= require_tree .
  */
+
+footer {
+	width: 100%;
+	background-color: #212D48;
+	line-height: 1.5em;
+	position : fixed;
+	bottom: 0;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+#content{
+	padding-bottom: 40px;
+}
+
+#hide-header{
+	display: none;
+}
+
+#application-name{
+	color: white;
+}
+
+#show{
+	text-align: center;	
+}
+
+#user-table{
+	background-color: lightblue	;
+}

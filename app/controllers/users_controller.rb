@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        User.invite!(:email => user.email, :name => user.name)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

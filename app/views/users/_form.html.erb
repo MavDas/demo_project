@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="row collapse">
     <div class="small-3 columns">
       <%= f.label :name, class: "right inline" %>
     </div>
@@ -19,7 +19,7 @@
       <%= f.text_field :name %>
     </div>
   </div>
-  <div class="row">
+  <div class="row collapse">
     <div class="small-3 columns">
       <%= f.label :email,class: "right inline" %>
     </div>
@@ -27,15 +27,7 @@
       <%= f.text_field :email %>
     </div>
   </div>
-  <div class="row">
-    <div class="small-3 columns">
-      <%= f.label :password, class: "right inline" %>
-    </div>
-    <div class="small-9 columns">
-      <%= f.password_field :password, placeholder: "Leave blank if unchanged" %>
-    </div>
-  </div>
-  <div class="row">
+  <div class="row collapse">
     <div class="small-3 columns">
       <%= f.label :role_id, class: "right inline" %>
     </div>
@@ -43,18 +35,17 @@
       <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}) %>
     </div>
   </div>
-  <div class="row">
+  <div class="row collapse">
     <div class="small-3 columns">
       <%= f.label :approved,class: "right inline" %>
     </div>
-    <div class="small-9 columns">
-      <%= f.text_field :approved %>
+    <div class="small-9 columns" id="checker">
+      <%= f.check_box :approved %>
     </div>
   </div>
-  <div class="row">
+  <div class="row collapse">
     <div class="small-9 small-offset-3 columns">
-      <%= f.submit "Update User", class: "round button small" %>
+      <%= f.submit "Submit User", class: "round button tiny" %>
     </div>
   </div>
-
 <% end %>

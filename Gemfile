@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'devise_invitable'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'

@@ -7,6 +7,8 @@ label.right{
   background: #e6e6e6;
   color: #8a8a8a;
   border: 0;
+  padding-top:10px;
+  padding-bottom: 10px;
   border-left: 0.3125rem solid #8a8a8a;
   box-shadow: 0 5px 8px -6px rgba(0, 0, 0, 0.2);
 }
@@ -66,4 +68,8 @@ label.right{
 
 .button.small{
   color: white;
+}
+
+#checker{
+  padding-top: 12px;
 }
