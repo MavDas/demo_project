@@ -1,6 +1,7 @@
 <% content_for :head do %>
-<h2>Sign up</h2>
+  <h2>Sign up</h2>
 <% end %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -26,7 +27,7 @@
     <div class="small-3 columns">
       <%= f.label :password, class: "right inline" %>
         <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="right inline">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
     </div>
     <div class="small-9 columns">

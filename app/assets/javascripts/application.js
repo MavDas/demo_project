@@ -20,8 +20,13 @@
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-$('#user-table').dataTable()
-	sPaginationType: "full_numbers"
+$('#user-table').dataTable({
+	
+	
+	"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
+	"iDisplayLength": 5
+	});
+	//sPaginationType: "simple"
 	bJQueryUI: true
 });
 

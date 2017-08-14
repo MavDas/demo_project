@@ -1,7 +1,8 @@
 <% content_for :head do %>
-<h1>Listing Roles</h1>
+  <h1>Listing Roles</h1>
 <% end %>
-<table>
+
+<table class="small-12 columns">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,14 +16,19 @@
       <tr>
         <td><%= role.name %></td>
         <td><%= role.description %></td>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', role , class: "success button tiny fi-eye" %></td>
+        <td><%= link_to '', edit_role_path(role), class: "button tiny fi-pencil" %></td>
+        <td><%= link_to '', role, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Role', new_role_path %>
+<div class="row">
+  <div class="small-12 columns center">
+    <% if can? :create, Role %>
+      <%= link_to 'New Role', new_role_path, class: "radius button tiny success" %>
+    <% end %>
+  </div>
+</div>

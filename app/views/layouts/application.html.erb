@@ -4,37 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Store App" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Demo Application" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
+  <div id="container"></div>
   <nav class="top-bar" data-topbar role = "navigation">
     <ul class="title-area">
       <li class="name">
         <h1 id="application-name">DEMO</h1>
       </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="has-dropdown menu-icon"><a href="#">Options</a>
-        <ul class="dropdown">
-          <% if user_signed_in? %>
-            <li> <%= link_to "Edit profile", edit_user_registration_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "sign in", new_user_session_path %></li>
-          <% end %>
-            <li><%= link_to "Contact Us", welcome_show_path %></li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class="has-dropdown menu-icon"><%= link_to "Home", items_path %>
+          <ul class="dropdown">
+            <% if user_signed_in? %>
+              <li> <%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li><%= link_to "Sign In", new_user_session_path %></li>
+            <% end %>
+              <li><%= link_to "Contact Us", welcome_show_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </nav>
 
 
@@ -49,9 +50,8 @@
       </div>
     </div>
   </div>
-
   <footer>
-    Copyright &copy; Jobs.com
+    Copyright &copy; DemoApp.com
   </footer>
   
 <%= javascript_include_tag "application" %>

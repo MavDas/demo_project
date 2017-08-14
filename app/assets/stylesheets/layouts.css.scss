@@ -1,3 +1,6 @@
+.button.tiny{
+  font-size: 1em;
+}
 label.right{
 	padding-right: 10px;
 }
@@ -13,7 +16,7 @@ label.right{
   box-shadow: 0 5px 8px -6px rgba(0, 0, 0, 0.2);
 }
 
-.alert-callout-subtle.notice {
+.alert-callout-subtle {
   background: #e6e6e6;
   color: #8a8a8a;
   border-left: 0.3125rem solid #3adb76;
@@ -31,7 +34,7 @@ label.right{
   border-left: 0.3125rem solid #ffae00;
 }
 
-.alert-callout-subtle.primary {
+.alert-callout-subtle.notice {
   background: #e6e6e6;
   color: #8a8a8a;
   border-left: 0.3125rem solid #1779ba;
@@ -72,4 +75,20 @@ label.right{
 
 #checker{
   padding-top: 12px;
+}
+
+
+#user-table_info{
+  color: white;
+}
+
+label{
+  color: white;
+}
+
+#user-table_next, #user-table_previous{
+  box-shadow: 2px 1px 3px grey;
+  background-color: lightgreen;
+  border-radius: 2px;
+  cursor: pointer;
 }

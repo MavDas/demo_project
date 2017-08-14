@@ -1,13 +1,22 @@
 <% content_for :head do %>
-<h1>Listing Users</h1>
+  <h1>Listing Users</h1>
 <% end %>
 
+<br>
+<div class="row">
+  <div class="small-6 columns">
+    <%= link_to "New Invitation", new_user_invitation_path, class: "radius button tiny success right inline" %>
+  </div>
+    <%= link_to "Unapproved Users", users_path(approved: false), class: "tiny button radius alert" %>
+</div>
+<br>
 <table class="small-12 columns" id="user-table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Role</th>
       <th>Email</th>
+      <th>Approval Status</th>
       <th id="hide-header">Show</th>
       <th id="hide-header">Edit</th>
       <th id="hide-header">Destroy</th>
@@ -20,19 +29,14 @@
         <td><%= user.name %></td>
         <td><%= user.role.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user, class: "tiny button radius info" %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), class: "tiny button radius info" %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "tiny button radius alert" %></td>
+        <td><%= check_box_tag :approved ,user.id, user.approved, 
+                data: { url: toggle_user_path(user.id) }, class: 'user-approved', id: "approved_#{user.id.to_s}" %>
+                  
+        </td>
+        <td><%= link_to '', user, class: "success button tiny fi-eye" %></td>
+        <td><%= link_to '', edit_user_path(user), class: "button tiny fi-pencil" %></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<div class="row">
-  <div class="small-6 columns">
-    <%= link_to "New Invitation", new_user_invitation_path, class: "radius button small success right inline" %>
-  </div>
-    <%= link_to "Unapproved Users", users_path(approved: false), class: "small button radius alert" %>
-</div>

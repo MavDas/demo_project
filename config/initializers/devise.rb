@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'administrator@app.com'
+  config.mailer_sender = 'administrator@app.com' #
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
   
@@ -102,8 +102,8 @@ Devise.setup do |config|
   # The period the generated invitation token is valid, after
   # this period, the invited resource won't be able to accept the invitation.
   # When invite_for is 0 (the default), the invitation won't expire.
-  config.invite_for = 2.weeks
-  config.scoped_views = true
+  config.invite_for = 2.weeks #
+  config.scoped_views = true #
   # Number of invitations users can send.
   # - If invitation_limit is nil, there is no limit for invitations, users can
   # send unlimited invitations, invitation_limit column is not used.
@@ -121,7 +121,7 @@ Devise.setup do |config|
 
   # Flag that force a record to be valid before being actually invited
   # Default: false
-  config.validate_on_invite = true
+  config.validate_on_invite = true #
 
   # Resend invitation if user with invited status is invited again
   # Default: true
@@ -130,11 +130,11 @@ Devise.setup do |config|
   # The class name of the inviting model. If this is nil,
   # the #invited_by association is declared to be polymorphic.
   # Default: nil
-   config.invited_by_class_name = 'User'
+   config.invited_by_class_name = 'User' #
 
   # The foreign key to the inviting model (if invited_by_class_name is set)
   # Default: :invited_by_id
-   config.invited_by_foreign_key = :invited_by_id
+   config.invited_by_foreign_key = :invited_by_id #
 
   # The column name used for counter_cache column. If this is nil,
   # the #invited_by association is declared without counter_cache.
@@ -144,7 +144,7 @@ Devise.setup do |config|
   # Auto-login after the user accepts the invite. If this is false,
   # the user will need to manually log in after accepting the invite.
   # Default: true
-   config.allow_insecure_sign_in_after_accept = false
+   config.allow_insecure_sign_in_after_accept = false #
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -279,7 +279,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  #config.omniauth :twitter, Rails.application.secrets.TWITTER_ID, Rails.application.secrets.TWITTER_SECRET
+  config.omniauth :facebook, Rails.application.secrets.FACEBOOK_ID, Rails.application.secrets.FACEBOOK_SECRET
+  config.omniauth :google_oauth2, Rails.application.secrets.GOOGLE_OAUTH2_ID, Rails.application.secrets.GOOGLE_OAUTH2_SECRET,{redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"}
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

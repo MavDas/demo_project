@@ -1,36 +1,43 @@
-<div class="row">
-  <div class="small-12 columns" id="show">
-<p>
-	<strong>Email:</strong>
-	<%= @user.email %>
-</p>
-<p>
-  <strong>Approval:</strong>
-  <%= @user.approved %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<table class="small-12 columns">
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Status</th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <tr>
+      <td><strong>Email:</strong></td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td><strong>Approval:</strong></td>
+      <td><%= @user.approved %></td>
+    </tr>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Role:</strong></td>
+      <td><%= @user.role.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Joined On:</strong></td>
+      <td><%= @joined_on %></td>
+    </tr>
+    <tr>
+      <td><strong>Last Login:</strong></td>
+      <td><%= @last_login %></td>
+    </tr>
+    <tr>
+      <td><strong>Total Logins:</strong></td>
+      <td><%= @user.sign_in_count %></td>
+    </tr>
+  </tbody>
+</table>
 <p>
-  <strong>Role:</strong>
-  <%= @user.role.name %>
+  <%= link_to 'Edit', edit_user_path(@user), class: "tiny button radius warning" %> |
+  <%= link_to 'Back', users_path, class: "tiny button radius success" %>
 </p>
-<p>
-  <strong>Joined on:</strong>
-  <%= @joined_on %>
-</p>
-<p>
-  <strong>Last logged in on:</strong>
-  <%= @last_login %>
-</p>
-<p>
-  <strong>No. times logged in:</strong>
-  <%= @user.sign_in_count %>
-</p>
-<%= link_to 'Edit', edit_user_path(@user), class: "tiny button radius info" %> |
-<%= link_to 'Back', users_path, class: "tiny button radius info" %>
-</div>
-</div>
-

@@ -1,6 +1,7 @@
 <% content_for :head do %>
-<h2>Forgot your password?</h2>
+  <h2>Forgot your password?</h2>
 <% end %>
+
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -15,7 +16,7 @@
 
   <div class="row collapse">
   	<div class="small-9 small-offset-3 columns">
-	    <%= f.submit "Send me reset password instructions", class: "round button tiny success" %>
+	    <%= f.submit "Send me reset password instructions", class: "button tiny" %>
 	   </div>
   </div>
 <% end %>

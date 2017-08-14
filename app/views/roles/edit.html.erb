@@ -1,7 +1,14 @@
 <% content_for :head do %>
-<h1>Editing Role</h1>
+	<h1>Editing Role</h1>
 <% end %>
+
 <%= render 'form' %>
 
-<%= link_to 'Show', @role %> |
-<%= link_to 'Back', roles_path %>
+<div class="row">
+	<div class="small-6 columns">
+		<%= link_to 'Show', @role, class: "success radius button right inline tiny" %> |
+	</div>
+	<div class="small-6 columns">
+		<%= link_to 'Back', roles_path, class: "success radius button tiny" %>
+	</div>
+</div>

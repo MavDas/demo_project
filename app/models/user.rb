@@ -1,14 +1,54 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  TEMP_EMAIL_PREFIX = 'change@me'
+  TEMP_EMAIL_REGEX = /change@me/
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   belongs_to :role
   has_many :items
   validates_presence_of :name
+  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :submit
   before_save :assign_role
 
-  
+   def self.from_omniauth_f(auth, signed_in_resource = nil)
+    identity = Identity.find_for_oauth(auth)
+    user = signed_in_resource ? signed_in_resource : identity.user
+
+    if user.nil?
+      user = User.new(email: auth.info.email,
+        password: Devise.friendly_token[0,20], 
+        name: auth.info.name)
+      user.skip_confirmation!
+      user.save!
+    end
+    if identity.user != user
+      identity.user = user
+      identity.save!
+    end
+    user
+  end
+
+  def self.from_omniauth_g(access_token)
+    data = access_token.info
+    user = User.where(email: data['email']).first
+
+    #Uncomment the section below if you want users to be created if they don't exist
+    unless user
+      user = User.create(name: data['name'],
+        email: data['email'],
+        password: Devise.friendly_token[0,20]
+      )
+    end
+    user
+  end
+
+ 
+
+  def email_verified?
+    self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
+
   def accept_invitation!
     send_invite_mail
     super

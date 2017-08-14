@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require dataTables/jquery.dataTables
+ *= require_tree .
+ */
+@import 'foundation-icons.css';
+footer {
+	width: 100%;
+	line-height: 1.5em;
+	background-color: lightblue;
+	opacity: 0.6;
+	position : fixed;
+	bottom: 0;
+	color: black;
+	padding: 10px;
+	text-align: center;
+}
+
+#content{
+	padding-bottom: 40px;
+	margin-top: 10px;
+}
+
+#hide-header{
+	display: none;
+}
+
+#application-name{
+	color: white;
+	padding-left: 10px;
+}
+
+#show{
+	text-align: center;	
+}
+
+table, #user-table{
+		padding: 0;
+	}
+
+
+
+p{
+	width:100%;
+	text-align: center;
+}
+
+#container{
+	background-image: url("/back-dp.jpg");
+	position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(6px);
+  opacity: 0.8;
+}
+
+h1,h2{
+	text-align: center;
+}
+

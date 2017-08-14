@@ -29,7 +29,10 @@ gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'foundation-rails'
-
+gem 'foundation-icons-sass-rails',  '~> 3.0.0'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

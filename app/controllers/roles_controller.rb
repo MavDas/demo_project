@@ -1,7 +1,9 @@
 class RolesController < ApplicationController
   #before_action :set_role, only: [:show, :edit, :update, :destroy]
+
   before_filter :authenticate_user!
   load_and_authorize_resource
+
   # GET /roles
   # GET /roles.json
   def index
@@ -31,7 +33,6 @@ class RolesController < ApplicationController
   # POST /roles.json
   def create
    # @role = Role.new(role_params)
-
     respond_to do |format|
       if @role.save
         format.html { redirect_to @role, notice: 'Role was successfully created.' }

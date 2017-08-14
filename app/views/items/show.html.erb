@@ -19,5 +19,7 @@
   <%= @item.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item), class: "small button radius" %> |
-<%= link_to 'Back', items_path, class: "small button radius" %>
+<p>
+	<%= link_to 'Edit', edit_item_path(@item), class: "tiny button radius warning" %> |
+	<%= link_to 'Back', items_path, class: "tiny button radius success" %>
+</p>

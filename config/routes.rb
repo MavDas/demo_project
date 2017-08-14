@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :invitations => 'invitations'}
+  devise_for :users, :controllers => { :invitations => 'invitations', omniauth_callbacks: 'my_devise/omniauth_callbacks'}
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
   scope "/admin" do
-    resources :users
+    resources :users do
+      member do
+        patch 'toggle'
+      end
+    end
   end
+  
   resources :items
   resources :roles
-  
   
   authenticated :user do
     root :to => 'items#index', as: :authenticated_root
   end
+
   root to: "welcome#index"
   get "welcome/show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
