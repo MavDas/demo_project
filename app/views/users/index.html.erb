@@ -31,7 +31,7 @@
         <td><%= user.email %></td>
         <td><%= check_box_tag :approved ,user.id, user.approved, 
                 data: { url: toggle_user_path(user.id) }, class: 'user-approved', id: "approved_#{user.id.to_s}" %>
-                  
+       
         </td>
         <td><%= link_to '', user, class: "success button tiny fi-eye" %></td>
         <td><%= link_to '', edit_user_path(user), class: "button tiny fi-pencil" %></td>
@@ -40,3 +40,4 @@
     <% end %>
   </tbody>
 </table>
+

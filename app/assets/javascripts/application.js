@@ -19,6 +19,7 @@
 
 $(function(){ $(document).foundation(); });
 
+
 $(document).ready(function(){
 $('#user-table').dataTable({
 	
