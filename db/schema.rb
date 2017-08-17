@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809063722) do
-
-  create_table "identities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+ActiveRecord::Schema.define(version: 20170804095559) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170809063722) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved"

@@ -56,8 +56,8 @@ Rails.application.configure do
     :port => 587,
     :domain => "gmail.com",
     :authentication => :login,
-    :user_name => "amanvimal@gmail.com",
-    :password => "Gogetassj4"
+    :user_name => Rails.application.secrets.email_id,
+    :password => Rails.application.secrets.password
   }
 
   # Prepend all log lines with the following tags.

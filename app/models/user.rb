@@ -1,49 +1,36 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  TEMP_EMAIL_PREFIX = 'change@me'
-  TEMP_EMAIL_REGEX = /change@me/
+
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   belongs_to :role
   has_many :items
   validates_presence_of :name
-  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :submit
   before_save :assign_role
 
-   def self.from_omniauth_f(auth, signed_in_resource = nil)
-    identity = Identity.find_for_oauth(auth)
-    user = signed_in_resource ? signed_in_resource : identity.user
-
-    if user.nil?
-      user = User.new(email: auth.info.email,
-        password: Devise.friendly_token[0,20], 
-        name: auth.info.name)
-      user.skip_confirmation!
-      user.save!
+  def self.from_omniauth(auth)              # getting info from user social account and assigning them in table    
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.nickname || auth.info.name
+      user.skip_confirmation!               # if user is following social account registration,then email confirmation is ignonred
     end
-    if identity.user != user
-      identity.user = user
-      identity.save!
-    end
-    user
   end
 
-  def self.from_omniauth_g(access_token)
-    data = access_token.info
-    user = User.where(email: data['email']).first
-
-    #Uncomment the section below if you want users to be created if they don't exist
-    unless user
-      user = User.create(name: data['name'],
-        email: data['email'],
-        password: Devise.friendly_token[0,20]
-      )
+  def self.new_with_session(params, session)         #creating session for an existing user
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.email = data["email"] if user.email.blank? and params[:provider] == 'facebook'
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
     end
-    user
   end
 
- 
 
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX

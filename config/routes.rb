@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :invitations => 'invitations', omniauth_callbacks: 'my_devise/omniauth_callbacks'}
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  devise_for :users, :controllers => { :invitations => 'invitations' , 
+                                  :omniauth_callbacks => 'my_devise/omniauth_callbacks'}
+  
 
   scope "/admin" do
     resources :users do

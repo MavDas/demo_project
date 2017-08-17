@@ -10,5 +10,5 @@ r2 = Role.create({name: "Seller", description: "Can read and create items. Can u
 r3 = Role.create({name: "Admin", description: "Can perform any CRUD operation on any resource"})
 
 
-u1 = User.create({name: "Aman", email: "aman@hot.com", password: "password", password_confirmation: "password", role_id: r3.id, approved: "true", confirmed_at: Time.now.utc })
+u1 = User.create({name: "Aman", email: "amanvimal@gmail.com", password: "password", password_confirmation: "password", role_id: r3.id, approved: "true", confirmed_at: Time.now.utc })
 
