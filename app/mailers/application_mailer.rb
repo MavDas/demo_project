@@ -1,6 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
 	
-	default from: "administrator@gmail.com"
+	default from: "aman95vimal@gmail.com"
 	layout 'mailer'
 	
 	def send_welcome_email(user)
