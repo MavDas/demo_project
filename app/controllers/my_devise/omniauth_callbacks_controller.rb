@@ -26,7 +26,7 @@ class MyDevise::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
   #   super(scope)
   # end
 
-  def all # all is Alias which will be called for facebook,google+ login
+  def facebook # all is Alias which will be called for facebook,google+ login
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?  # if user is found then he is logged in otherwise redirected to registration page
       flash.notice = "Account Sccessfully authenticated."
@@ -39,6 +39,8 @@ class MyDevise::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
   def failure
     redirect_to root_path
   end
-  alias_method :facebook, :all
-  alias_method :google_oauth2, :all
+
+  #alias_method :facebook, :all
+  #alias_method :google_oauth2, :all
+
 end
