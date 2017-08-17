@@ -25,9 +25,7 @@ class MyDevise::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-  alias_method :facebook, :all
-  alias_method :google_oauth2, :all
-
+ 
 
   def all # all is Alias which will be called for facebook,google+ login
     user = User.from_omniauth(request.env["omniauth.auth"])
@@ -39,9 +37,13 @@ class MyDevise::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
       redirect_to new_user_registration_url
     end
   end
+
   def failure
     redirect_to root_path
   end
+
+  alias_method :facebook, :all
+  alias_method :google_oauth2, :all
 
   
 end
