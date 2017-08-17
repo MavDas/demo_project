@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
 
@@ -32,6 +32,7 @@ gem 'foundation-icons-sass-rails',  '~> 3.0.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+gem 'puma'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

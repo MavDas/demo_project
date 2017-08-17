@@ -39,18 +39,18 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => "gmail.com",
-    :authentication => :login,
-    :user_name => Rails.application.secrets.email_id,
-    :password => Rails.application.secrets.password
-  }
+  config.action_mailer.default_url_options = { :host => 'gmail.com' }
+  #config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #  :enable_starttls_auto => true,
+  #  :address => "smtp.gmail.com",
+  #  :port => 587,
+  #  :domain => "gmail.com",
+  #  :authentication => :login,
+  #  :user_name => Rails.application.secrets.email_id,
+  #  :password => Rails.application.secrets.password
+  #}
 
 
   # Raises error for missing translations
