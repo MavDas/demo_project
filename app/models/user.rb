@@ -9,12 +9,6 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   before_save :assign_role
 
-  
-
-  def email_verified?
-    self.email && self.email !~ TEMP_EMAIL_REGEX
-  end
-
   def accept_invitation!
     send_invite_mail
     super
