@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     else
       @last_login = "never"
     end
+    render :layout => false
   end
 
   # GET /users/new
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     authorize! :edit, @item
+    render :layout => false
   end
 
   # POST /users
@@ -80,7 +82,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if successfully_updated
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
       else
         format.html { render action: :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }

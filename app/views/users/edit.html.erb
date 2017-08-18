@@ -1,13 +1,9 @@
-<% content_for :head do %>
-<h1>Editing User</h1>
-<% end %>
+<a class="close-reveal-modal" aria-label="close">&#215;</a>
+<br>
 <%= render 'form' %>
 
 <div class="row">
-	<div class="small-6 columns">
-		<%= link_to 'Show', @user, class: "success radius button right inline tiny" %>
-	</div>
-	<div class="small-6 columns">
+	<div class="small-6 small-offset-6 columns">
 		<%= link_to 'Back', users_path, class: "success radius button tiny" %>
 	</div>
 </div>
