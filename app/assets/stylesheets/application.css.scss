@@ -89,3 +89,11 @@ h1,h2{
 	text-align: center;
 }
 
+#error_explanation{
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.field_with_errors{
+  background-color: indianred;
+}
