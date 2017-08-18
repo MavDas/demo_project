@@ -9,29 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   before_save :assign_role
 
-  def self.from_omniauth(auth)              # getting info from user social account and assigning them in table    
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.nickname || auth.info.name
-      user.password = Devise.friendly_token[0,20]
-      user.skip_confirmation!               # if user is following social account registration,then email confirmation is ignonred
-    end
-  end
-
-  def self.new_with_session(params, session)         #creating session for an existing user
-    if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
-        user.email = data["email"] if user.email.blank? and params[:provider] == 'facebook'
-        user.attributes = params
-        user.valid?
-      end
-    else
-      super
-    end
-  end
-
+  
 
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
@@ -73,6 +51,41 @@ class User < ActiveRecord::Base
  			super
  		end
  	end
+
+  def self.from_omniauth(auth)              # getting info from user social account and assigning them in table    
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.nickname || auth.info.name
+      user.password = Devise.friendly_token[0,20]
+      user.skip_confirmation!               # if user is following social account registration,then email confirmation is ignonred
+    end
+  end
+
+  def self.new_with_session(params, session)         #creating session for an existing user
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.email = data["email"] if user.email.blank? and params[:provider] == 'facebook'
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+  end
+
+  def password_required?                            # password validation is avoided as authentication is done using registered accounts
+    super && provider.blank?
+  end
+  
+  def update_with_password(params, *options)        # to handle field which need current password in oder to update to a new password
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
 
  	def self.send_reset_password_instructions(attributes={})
     recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
