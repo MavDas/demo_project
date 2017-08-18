@@ -34,7 +34,7 @@ class MyDevise::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
        sign_in_and_redirect @user, event: :authentication
     else
       session["devise.user_attributes"] = user.attributes # if user is new then registration is done using omniauth
-      redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
+      redirect_to new_user_registration_url
     end
   end
 

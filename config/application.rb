@@ -23,5 +23,6 @@ module Store
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.active_record.timestamped_migrations = false
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end
