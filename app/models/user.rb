@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.nickname || auth.info.name
+      user.password = Devise.friendly_token[0,20]
       user.skip_confirmation!               # if user is following social account registration,then email confirmation is ignonred
     end
   end
