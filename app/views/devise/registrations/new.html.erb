@@ -7,6 +7,15 @@
 
   <div class="row collapse">
     <div class="small-3 columns">
+      <%= f.label :email, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+  
+  <div class="row collapse">
+    <div class="small-3 columns">
       <%= f.label :name, class: "right inline" %>
     </div>
     <div class="small-9 columns">
@@ -14,14 +23,7 @@
     </div>
   </div>
 
-  <div class="row collapse">
-    <div class="small-3 columns">
-      <%= f.label :email, class: "right inline" %>
-    </div>
-    <div class="small-9 columns">
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-  </div>
+  
 
   <div class="row collapse">
     <div class="small-3 columns">
