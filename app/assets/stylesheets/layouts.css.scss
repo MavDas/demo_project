@@ -92,3 +92,12 @@ label{
   border-radius: 2px;
   cursor: pointer;
 }
+
+#error_explanation{
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.field_with_errors{
+  background-color: indianred;
+}
