@@ -18,6 +18,7 @@ class RolesController < ApplicationController
     else
       @assosciated_users = @role.users.map(&:name).join(", ")
     end
+    render :layout => false
   end
 
   # GET /roles/new
@@ -27,6 +28,7 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
+    render :layout => false
   end
 
   # POST /roles

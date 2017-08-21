@@ -14,20 +14,36 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require foundation
-//= require turbolinks
+//= require sweetalert2
+//= require sweet-alert2-rails
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
+$(document).foundation('offcanvas', 'reflow');
 
 $(document).ready(function(){
-$('#user-table').dataTable({
-	
-	
-	"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
-	"iDisplayLength": 5
+	$('#users-table').dataTable({
+		"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
+		"iDisplayLength": 5
 	});
 	//sPaginationType: "simple"
 	bJQueryUI: true
 });
 
+$(document).ready(function(){
+	$('#roles-table').dataTable({
+		"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
+		"iDisplayLength": 5
+	});
+	//sPaginationType: "simple"
+	bJQueryUI: true
+});
+
+$(document).ready(function(){
+	$('#items-table').dataTable({
+		"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
+		"iDisplayLength": 5
+	});
+	//sPaginationType: "simple"
+	bJQueryUI: true
+});

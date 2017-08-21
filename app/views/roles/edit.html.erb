@@ -1,14 +1,5 @@
-<% content_for :head do %>
-	<h1>Editing Role</h1>
-<% end %>
+<h1>Editing Role</h1>
+
+<a class="close-reveal-modal" aria-label="close">&#215;</a>
 
 <%= render 'form' %>
-
-<div class="row">
-	<div class="small-6 columns">
-		<%= link_to 'Show', @role, class: "success radius button right inline tiny" %> |
-	</div>
-	<div class="small-6 columns">
-		<%= link_to 'Back', roles_path, class: "success radius button tiny" %>
-	</div>
-</div>

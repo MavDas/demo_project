@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require sweetalert2
  *= require_self
  *= require foundation_and_overrides
  *= require dataTables/jquery.dataTables
@@ -60,11 +61,17 @@ footer {
 	text-align: center;	
 }
 
-table, #user-table{
-		padding: 0;
-	}
+table, #users-table{
+	padding: 0;
+}
 
+table, #roles-table{
+	padding: 0;
+}
 
+table, #items-table{
+	padding: 0;
+}
 
 p{
 	width:100%;

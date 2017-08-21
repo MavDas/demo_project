@@ -1,3 +1,5 @@
+<h1> Showing Item </h1>
+<a class="close-reveal-modal" aria-label="close">&#215;</a>
 
 <p>
   <strong>Name:</strong>
@@ -19,7 +21,3 @@
   <%= @item.user.name %>
 </p>
 
-<p>
-	<%= link_to 'Edit', edit_item_path(@item), class: "tiny button radius warning" %> |
-	<%= link_to 'Back', items_path, class: "tiny button radius success" %>
-</p>

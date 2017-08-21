@@ -2,7 +2,7 @@
 <h2><%= t "devise.invitations.new.header" %></h2>
 <% end %>
 
-<a class="close-reveal-modal">&#215;</a>
+<a class="close-reveal-modal">&#215;</a><br>
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
 

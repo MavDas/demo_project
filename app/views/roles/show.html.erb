@@ -1,4 +1,5 @@
-	
+<h1>Show Roles</h1>
+<a class="close-reveal-modal" aria-label="close">&#215;</a>	
 <p>
   <strong>Name:</strong>
   <%= @role.name %>
@@ -11,8 +12,4 @@
 <p>
   <strong>Assosciated users:</strong>
   <%= @assosciated_users %>
-</p>
-<p>
-	<%= link_to 'Edit', edit_role_path(@role), class: "tiny button radius warning" %> |
-	<%= link_to 'Back', roles_path, class: "tiny button radius success" %>
 </p>

@@ -5,12 +5,12 @@
 <br>
 <div class="row">
   <div class="small-6 columns">
-    <%= link_to "New Invitation", new_user_invitation_path, class: "radius button tiny success right inline" %>
+    <%= link_to "New Invitation", new_user_invitation_path, class: "radius button tiny success right inline",  "data-reveal-id" => "invite_modal", "data-reveal-ajax" => "true" %>
   </div>
     <%= link_to "Unapproved Users", users_path(approved: false), class: "tiny button radius alert" %>
 </div>
 <br>
-<table class="small-12 columns" id="user-table">
+<table class="small-12 columns" id="users-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -35,7 +35,7 @@
         </td>
         <td><%= link_to '', user, class: "success button tiny fi-eye", "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= link_to '', edit_user_path(user), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %></td>
-        <td><%= link_to '', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus" %></td>
+        <td><%= link_to '', user, method: :delete,  data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,4 +43,5 @@
 
 <div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden="true" role="dialog"></div>
 <div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>
+<div id="invite_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>
 

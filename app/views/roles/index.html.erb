@@ -1,8 +1,13 @@
 <% content_for :head do %>
   <h1>Listing Roles</h1>
 <% end %>
-
-<table class="small-12 columns">
+<p>
+  <% if can? :create, Role %>
+    <%= link_to 'New Role', new_role_path, class: "radius button tiny success" %>
+  <% end %>
+</p>
+<br>
+<table class="small-12 columns" id="roles-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,19 +21,14 @@
       <tr>
         <td><%= role.name %></td>
         <td><%= role.description %></td>
-        <td><%= link_to '', role , class: "success button tiny fi-eye" %></td>
-        <td><%= link_to '', edit_role_path(role), class: "button tiny fi-pencil" %></td>
+        <td><%= link_to '', role , class: "success button tiny fi-eye", "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
+        <td><%= link_to '', edit_role_path(role), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= link_to '', role, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-<div class="row">
-  <div class="small-12 columns center">
-    <% if can? :create, Role %>
-      <%= link_to 'New Role', new_role_path, class: "radius button tiny success" %>
-    <% end %>
-  </div>
-</div>
+
+<div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden = "true" role = "dialog"></div>
+<div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden = "true" role = "dialog"></div>

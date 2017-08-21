@@ -78,7 +78,7 @@ label.right{
 }
 
 
-#user-table_info{
+#users-table_info{
   color: white;
 }
 
@@ -86,7 +86,7 @@ label{
   color: white;
 }
 
-#user-table_next, #user-table_previous{
+#users-table_next, #users-table_previous{
   box-shadow: 2px 1px 3px grey;
   background-color: lightgreen;
   border-radius: 2px;
@@ -95,5 +95,27 @@ label{
 
 .reveal-modal{
   background-color: grey;
+}
+
+#roles-table_info{
+  color: white;
+}
+
+#roles-table_next, #roles-table_previous{
+  box-shadow: 2px 1px 3px grey;
+  background-color: lightgreen;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#items-table_info{
+  color: white;
+}
+
+#items-table_next, #items-table_previous{
+  box-shadow: 2px 1px 3px grey;
+  background-color: lightgreen;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
