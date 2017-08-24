@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!
@@ -73,13 +73,15 @@ class UsersController < ApplicationController
       user_params.delete(:password)
       user_params.delete(:password_confirmation)
     end
-
-    successfully_updated = if needs_password?(@user, user_params)
-                              @user.update(user_params)
-                            else
-                              @user.update_without_password(user_params)
-                            end
-
+    if @user == current_user
+      successfully_updated = @user.update(user_params_restricted)
+    else
+      successfully_updated =  if needs_password?(@user, user_params)
+                                @user.update(user_params)
+                              else
+                                @user.update_without_password(user_params)
+                              end
+    end
     respond_to do |format|
       if successfully_updated
         format.html { redirect_to users_path, notice: 'User was successfully updated.' }
@@ -115,7 +117,11 @@ class UsersController < ApplicationController
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation , :name, :role_id, :approved)
-    end
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation , :name, :role_id, :approved)
+  end
+  
+  def user_params_restricted
+    params.require(:user).permit(:name)
+  end
 end

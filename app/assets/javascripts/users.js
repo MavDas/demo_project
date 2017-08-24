@@ -4,7 +4,6 @@ $(function(){
 		var approval = $(this).is(':checked'); 
 		var url = $(this).attr('data-url');
 		if (this.checked){
-			alert("Checked");
 			$.ajax({
 				url: url,
 				type: 'PATCH',
@@ -12,7 +11,6 @@ $(function(){
 			});
 		}
 		else{
-			alert("Unchecked");
 			$.ajax({
 				url: url,
 				type: 'PATCH',

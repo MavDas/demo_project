@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804095559) do
+ActiveRecord::Schema.define(version: 20170804095566) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "tel"
+    t.string   "picture"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "creator"
+    t.datetime "start"
+    t.string   "status"
+    t.string   "link"
+    t.string   "calendar"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +56,16 @@ ActiveRecord::Schema.define(version: 20170804095559) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -61,6 +97,8 @@ ActiveRecord::Schema.define(version: 20170804095559) do
     t.integer  "invitations_count",      default: 0
     t.string   "provider"
     t.string   "uid"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved"

@@ -1,285 +1,0 @@
-Script started on Thursday 17 August 2017 02:25:59 PM IST
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ script/plugin install git://github.com/adamwiggins/gmail_smtp.git
-bash: script/plugin: No such file or directory
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ export GMAIL_SMTP_USER=username@gmail.com
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ export GMAIL_SMTP_USER=username@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.com[1P@gmail.coma@gmail.comm@gmail.coma@gmail.comn@gmail.comv@gmail.comi@gmail.comm@gmail.coma@gmail.coml@gmail.com
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ export GMAIL_SMTP_PASSWORD=yourpassword[K[K[K[K[K[K[K[K[K[K[K[Kgogetassj4
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ heroku config add[K[K[K[K:add GMAIL_USERNAME=aman95vimal@gmail.com GMAIL_PASSWORD= [Krails [Kapp
-[1000D[2K[?25lSetting [32mGMAIL_USERNAME[39m, [32mGMAIL_PASSWORD[39m and restarting [35m⬢ whispering-beach-71512[39m... [35m⣾[39m 
-[1A[82C[35m⣽[39m[1B[1000D[2K[1A[82C[35m⣻[39m[1B[1000D[2K[1A[82C[35m⢿[39m[1B[1000D[2K[1A[82C[35m⡿[39m[1B[1000D[2K[1A[82C[35m⣟[39m[1B[1000D[2K[1A[82C[35m⣯[39m[1B[1000D[2K[1A[82C[35m⣷[39m[1B[1000D[2K[1A[82C[35m⣾[39m[1B[1000D[2K[1A[82C[35m⣽[39m[1B[1000D[2K[1A[82C[35m⣻[39m[1B[1000D[2K[1A[82C[35m⢿[39m[1B[1000D[2K[1A[82C[35m⡿[39m[1B[1000D[2K[1A[82C[35m⣟[39m[1B[1000D[2K[1A[82C[35m⣯[39m[1B[1000D[2K[1A[82C[35m⣷[39m[1B[1000D[2K[1A[82C[35m⣾[39m[1B[1000D[2K[1A[82C[35m⣽[39m[1B[1000D[2K[1A[82C[35m⣻[39m[1B[1000D[2K[1A[82C[35m⢿[39m[1B[1000D[2K[1A[82C[35m⡿[39m[1B[1000D[2K[1A[82C[35m⣟[39m[1B[1000D[2K[1A[82C[35m⣯[39m[1B[1000D[2K[1A[82C[35m⣷[39m[1B[1000D[2K[1A[82C[35m⣾[39m[1B[1000D[2K[1A[82C[35m⣽[39m[1B[1000D[2K[1A[82C[35m⣻[39m[1B[1000D[2K[1A[82C[35m⢿[39m[1B[1000D[2K[1A[82C[35m⡿[39m[1B[1000D[2K[1A[82C[35m⣟[39m[1B[1000D[2K[1A[82C[35m⣯[39m[1B[1000D[2K[1A[82C[35m⣷[39m[1B[1000D[2K[1A[82C[35m⣾[39m[1B[1000D[2K[1A[82C[35m⣽[39m[1B[1000D[2K[1A[82C[35m⣻[39m[1B[1000D[2K[1A[82C[35m⢿[39m[1B[1000D[2K[1A[82C[35m⡿[39m[1B[1000D[2K[1A[82C[35m⣟[39m[1B[1000D[2K[1A[82C[35m⣯[39m[1B[1000D[2K[1A[JSetting [32mGMAIL_USERNAME[39m, [32mGMAIL_PASSWORD[39m and restarting [35m⬢ whispering-beach-71512[39m... done, [34m[1mv19[22m[39m
-[?25h[32mGMAIL_PASSWORD[39m: railsapp
-[32mGMAIL_USERNAME[39m: aman95vimal@gmail.com
-[?25h]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ git add -A
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ git commit -,[Km ""E"m"a"i"l"[C
-[master e3d6cdf] Email
- 6 files changed, 31 insertions(+), 22 deletions(-)
- create mode 100644 install
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ git push origin master
-Username for 'https://github.com': MavDas
-Password for 'https://MavDas@github.com': 
-Counting objects: 17, done.
-Delta compression using up to 4 threads.
-Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
-Writing objects:  11% (1/9)   Writing objects:  22% (2/9)   Writing objects:  33% (3/9)   Writing objects:  44% (4/9)   Writing objects:  55% (5/9)   Writing objects:  66% (6/9)   Writing objects:  77% (7/9)   Writing objects:  88% (8/9)   Writing objects: 100% (9/9)   Writing objects: 100% (9/9), 1.14 KiB | 0 bytes/s, done.
-Total 9 (delta 7), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/7)   [Kremote: Resolving deltas:  14% (1/7)   [Kremote: Resolving deltas:  28% (2/7)   [Kremote: Resolving deltas:  42% (3/7)   [Kremote: Resolving deltas:  57% (4/7)   [Kremote: Resolving deltas:  71% (5/7)   [Kremote: Resolving deltas:  85% (6/7)   [Kremote: Resolving deltas: 100% (7/7)   [Kremote: Resolving deltas: 100% (7/7), completed with 7 local objects.[K
-To https://github.com/MavDas/demo_project.git
-   2f7db02..e3d6cdf  master -> master
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ git push heroku master
-Counting objects: 17, done.
-Delta compression using up to 4 threads.
-Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
-Writing objects:  11% (1/9)   Writing objects:  22% (2/9)   Writing objects:  33% (3/9)   Writing objects:  44% (4/9)   Writing objects:  55% (5/9)   Writing objects:  66% (6/9)   Writing objects:  77% (7/9)   Writing objects:  88% (8/9)   Writing objects: 100% (9/9)   Writing objects: 100% (9/9), 1.14 KiB | 0 bytes/s, done.
-Total 9 (delta 7), reused 0 (delta 0)
-remote: Compressing source files... done.[K
-remote: Building source:[K
-remote: 
-remote: -----> Ruby app detected[K
-remote: -----> Compiling Ruby/Rails[K
-remote: -----> Using Ruby version: ruby-2.3.0[K
-remote: -----> Installing dependencies using bundler 1.15.2[K
-remote:        Ruby version change detected. Clearing bundler cache.[K
-remote:        Old: ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux][K
-remote:        New: ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux][K
-remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment[K
-remote:        The git source `git://github.com/rweng/jquery-datatables-rails.git` uses the `git` protocol, which transmits data without encryption. Disable this warning with `bundle config git.allow_insecure true`, or switch to the `https` protocol to keep your data secure.[K
-remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.15.3). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.[K
-remote:        Fetching gem metadata from https://rubygems.org/........[K
-remote:        Fetching version metadata from https://rubygems.org/..[K
-remote:        Fetching dependency metadata from https://rubygems.org/.[K
-remote:        Fetching git://github.com/rweng/jquery-datatables-rails.git[K
-remote:        Fetching rake 12.0.0[K
-remote:        Fetching i18n 0.8.6[K
-remote:        Fetching minitest 5.10.3[K
-remote:        Installing i18n 0.8.6[K
-remote:        Installing rake 12.0.0[K
-remote:        Installing minitest 5.10.3[K
-remote:        Fetching thread_safe 0.3.6[K
-remote:        Installing thread_safe 0.3.6[K
-remote:        Fetching builder 3.2.3[K
-remote:        Fetching erubis 2.7.0[K
-remote:        Installing builder 3.2.3[K
-remote:        Installing erubis 2.7.0[K
-remote:        Fetching mini_portile2 2.2.0[K
-remote:        Fetching rack 1.6.8[K
-remote:        Installing mini_portile2 2.2.0[K
-remote:        Installing rack 1.6.8[K
-remote:        Fetching mime-types-data 3.2016.0521[K
-remote:        Installing mime-types-data 3.2016.0521[K
-remote:        Fetching arel 6.0.4[K
-remote:        Installing arel 6.0.4[K
-remote:        Fetching bcrypt 3.1.11[K
-remote:        Installing bcrypt 3.1.11 with native extensions[K
-remote:        Using bundler 1.15.2[K
-remote:        Fetching cancancan 1.17.0[K
-remote:        Installing cancancan 1.17.0[K
-remote:        Fetching coffee-script-source 1.12.2[K
-remote:        Installing coffee-script-source 1.12.2[K
-remote:        Fetching execjs 2.7.0[K
-remote:        Fetching thor 0.19.4[K
-remote:        Installing execjs 2.7.0[K
-remote:        Installing thor 0.19.4[K
-remote:        Fetching concurrent-ruby 1.0.5[K
-remote:        Installing concurrent-ruby 1.0.5[K
-remote:        Fetching orm_adapter 0.5.0[K
-remote:        Installing orm_adapter 0.5.0[K
-remote:        Fetching multipart-post 2.0.0[K
-remote:        Installing multipart-post 2.0.0[K
-remote:        Fetching ffi 1.9.18[K
-remote:        Fetching rb-fsevent 0.10.2[K
-remote:        Installing rb-fsevent 0.10.2[K
-remote:        Fetching tilt 2.0.8[K
-remote:        Installing ffi 1.9.18 with native extensions[K
-remote:        Installing tilt 2.0.8[K
-remote:        Fetching hashie 3.5.6[K
-remote:        Installing hashie 3.5.6[K
-remote:        Fetching multi_json 1.12.1[K
-remote:        Installing multi_json 1.12.1[K
-remote:        Fetching json 1.8.6[K
-remote:        Installing json 1.8.6 with native extensions[K
-remote:        Fetching jwt 1.5.6[K
-remote:        Installing jwt 1.5.6[K
-remote:        Fetching multi_xml 0.6.0[K
-remote:        Installing multi_xml 0.6.0[K
-remote:        Fetching pg 0.21.0[K
-remote:        Installing pg 0.21.0 with native extensions[K
-remote:        Fetching puma 3.9.1[K
-remote:        Installing puma 3.9.1 with native extensions[K
-remote:        Fetching rails_serve_static_assets 0.0.5[K
-remote:        Installing rails_serve_static_assets 0.0.5[K
-remote:        Fetching rails_stdout_logging 0.0.5[K
-remote:        Installing rails_stdout_logging 0.0.5[K
-remote:        Fetching rdoc 4.3.0[K
-remote:        Installing rdoc 4.3.0[K
-remote:        Fetching turbolinks-source 5.0.3[K
-remote:        Installing turbolinks-source 5.0.3[K
-remote:        Fetching tzinfo 1.2.3[K
-remote:        Installing tzinfo 1.2.3[K
-remote:        Fetching nokogiri 1.8.0[K
-remote:        Installing nokogiri 1.8.0 with native extensions[K
-remote:        Fetching mime-types 3.1[K
-remote:        Installing mime-types 3.1[K
-remote:        Fetching rack-test 0.6.3[K
-remote:        Installing rack-test 0.6.3[K
-remote:        Fetching warden 1.2.7[K
-remote:        Fetching coffee-script 2.4.1[K
-remote:        Installing warden 1.2.7[K
-remote:        Installing coffee-script 2.4.1[K
-remote:        Fetching uglifier 3.2.0[K
-remote:        Installing uglifier 3.2.0[K
-remote:        Fetching sprockets 3.7.1[K
-remote:        Installing sprockets 3.7.1[K
-remote:        Fetching faraday 0.12.2[K
-remote:        Installing faraday 0.12.2[K
-remote:        Fetching omniauth 1.6.1[K
-remote:        Installing omniauth 1.6.1[K
-remote:        Fetching rb-inotify 0.9.10[K
-remote:        Installing rb-inotify 0.9.10[K
-remote:        Fetching rails_12factor 0.0.3[K
-remote:        Installing rails_12factor 0.0.3[K
-remote:        Fetching turbolinks 5.0.1[K
-remote:        Installing turbolinks 5.0.1[K
-remote:        Fetching activesupport 4.2.9[K
-remote:        Fetching mail 2.6.6[K
-remote:        Installing activesupport 4.2.9[K
-remote:        Installing mail 2.6.6[K
-remote:        Fetching sdoc 0.4.2[K
-remote:        Fetching oauth2 1.4.0[K
-remote:        Installing sdoc 0.4.2[K
-remote:        Installing oauth2 1.4.0[K
-remote:        Fetching sass-listen 4.0.0[K
-remote:        Installing sass-listen 4.0.0[K
-remote:        Fetching rails-deprecated_sanitizer 1.0.3[K
-remote:        Installing rails-deprecated_sanitizer 1.0.3[K
-remote:        Fetching globalid 0.4.0[K
-remote:        Installing globalid 0.4.0[K
-remote:        Fetching activemodel 4.2.9[K
-remote:        Fetching jbuilder 2.7.0[K
-remote:        Installing activemodel 4.2.9[K
-remote:        Installing jbuilder 2.7.0[K
-remote:        Fetching omniauth-oauth2 1.4.0[K
-remote:        Installing omniauth-oauth2 1.4.0[K
-remote:        Fetching sass 3.5.1[K
-remote:        Fetching activejob 4.2.9[K
-remote:        Installing activejob 4.2.9[K
-remote:        Installing sass 3.5.1[K
-remote:        Fetching activerecord 4.2.9[K
-remote:        Installing activerecord 4.2.9[K
-remote:        Fetching omniauth-facebook 4.0.0[K
-remote:        Installing omniauth-facebook 4.0.0[K
-remote:        Fetching omniauth-google-oauth2 0.5.2[K
-remote:        Installing omniauth-google-oauth2 0.5.2[K
-remote:        Fetching rails-dom-testing 1.0.8[K
-remote:        Fetching loofah 2.0.3[K
-remote:        Installing rails-dom-testing 1.0.8[K
-remote:        Installing loofah 2.0.3[K
-remote:        Fetching rails-html-sanitizer 1.0.3[K
-remote:        Installing rails-html-sanitizer 1.0.3[K
-remote:        Fetching actionview 4.2.9[K
-remote:        Installing actionview 4.2.9[K
-remote:        Fetching actionpack 4.2.9[K
-remote:        Installing actionpack 4.2.9[K
-remote:        Fetching actionmailer 4.2.9[K
-remote:        Fetching railties 4.2.9[K
-remote:        Fetching sprockets-rails 3.2.0[K
-remote:        Installing actionmailer 4.2.9[K
-remote:        Installing railties 4.2.9[K
-remote:        Installing sprockets-rails 3.2.0[K
-remote:        Fetching responders 2.4.0[K
-remote:        Fetching sass-rails 5.0.6[K
-remote:        Fetching coffee-rails 4.1.1[K
-remote:        Installing sass-rails 5.0.6[K
-remote:        Installing responders 2.4.0[K
-remote:        Installing coffee-rails 4.1.1[K
-remote:        Fetching foundation-rails 5.4.5.0[K
-remote:        Fetching jquery-rails 4.3.1[K
-remote:        Fetching rails 4.2.9[K
-remote:        Installing jquery-rails 4.3.1[K
-remote:        Installing rails 4.2.9[K
-remote:        Fetching devise 3.4.1[K
-remote:        Installing devise 3.4.1[K
-remote:        Installing foundation-rails 5.4.5.0[K
-remote:        Fetching foundation-icons-sass-rails 3.0.0[K
-remote:        Installing foundation-icons-sass-rails 3.0.0[K
-remote:        Using jquery-datatables-rails 3.4.0 from git://github.com/rweng/jquery-datatables-rails.git (at master@d486b31)[K
-remote:        Fetching devise_invitable 1.6.1[K
-remote:        Installing devise_invitable 1.6.1[K
-remote:        Bundle complete! 24 Gemfile dependencies, 79 gems now installed.[K
-remote:        Gems in the groups development and test were not installed.[K
-remote:        Bundled gems are installed into ./vendor/bundle.[K
-remote:        The latest bundler is 1.15.3, but you are currently running 1.15.2.[K
-remote:        To update, run `gem install bundler`[K
-remote:        Bundle completed (32.43s)[K
-remote:        Cleaning up the bundler cache.[K
-remote:        The git source `git://github.com/rweng/jquery-datatables-rails.git` uses the `git` protocol, which transmits data without encryption. Disable this warning with `bundle config git.allow_insecure true`, or switch to the `https` protocol to keep your data secure.[K
-remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.15.3). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.[K
-remote:        The latest bundler is 1.15.3, but you are currently running 1.15.2.[K
-remote:        To update, run `gem install bundler`[K
-remote: -----> Installing node-v6.11.1-linux-x64[K
-remote: -----> Detecting rake tasks[K
-remote: -----> Preparing app for Rails asset pipeline[K
-remote:        Running: rake assets:precompile[K
-remote:        /tmp/build_16ebf0d9f1792886c9b41a9beeb73c83/config/environments/production.rb:56: warning: key :enable_starttls_auto is duplicated and overwritten on line 61[K
-remote:        Asset precompilation completed (2.22s)[K
-remote:        Cleaning assets[K
-remote:        Running: rake assets:clean[K
-remote:        /tmp/build_16ebf0d9f1792886c9b41a9beeb73c83/config/environments/production.rb:56: warning: key :enable_starttls_auto is duplicated and overwritten on line 61[K
-remote: 
-remote: ###### WARNING:[K
-remote:        No Procfile detected, using the default web server.[K
-remote:        We recommend explicitly declaring how to boot your server process via a Procfile.[K
-remote:        https://devcenter.heroku.com/articles/ruby-default-web-server[K
-remote: 
-remote: -----> Discovering process types[K
-remote:        Procfile declares types     -> (none)[K
-remote:        Default types for buildpack -> console, rake, web, worker[K
-remote: 
-remote: -----> Compressing...[K
-remote:        Done: 43.8M[K
-remote: -----> Launching...[K
-remote:        Released v20[K
-remote:        https://whispering-beach-71512.herokuapp.com/ deployed to Heroku[K
-remote: 
-remote: Verifying deploy... done.[K
-To https://git.heroku.com/whispering-beach-71512.git
-   2f7db02..e3d6cdf  master -> master
-]0;mindfire@mindfire-u14: ~/project/rails/practice/storemindfire@mindfire-u14:~/project/rails/practice/store$ heroku run rake routes
-[1000D[2K[?25lRunning [36m[1mrake routes[22m[39m on [35m⬢ whispering-beach-71512[39m... [35m⣾[39m 
-[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[JRunning [36m[1mrake routes[22m[39m on [35m⬢ whispering-beach-71512[39m... [35m⢿[39m starting, run.2601 (Free)
-[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[JRunning [36m[1mrake routes[22m[39m on [35m⬢ whispering-beach-71512[39m... [35m⣷[39m connecting, run.2601 (Free)
-[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[51C[35m⣷[39m[1B[1000D[2K[1A[51C[35m⣾[39m[1B[1000D[2K[1A[51C[35m⣽[39m[1B[1000D[2K[1A[51C[35m⣻[39m[1B[1000D[2K[1A[51C[35m⢿[39m[1B[1000D[2K[1A[51C[35m⡿[39m[1B[1000D[2K[1A[51C[35m⣟[39m[1B[1000D[2K[1A[51C[35m⣯[39m[1B[1000D[2K[1A[JRunning [36m[1mrake routes[22m[39m on [35m⬢ whispering-beach-71512[39m... up, run.2601 (Free)
-[?25h/app/config/environments/production.rb:56: warning: key :enable_starttls_auto is duplicated and overwritten on line 61
-                  Prefix Verb     URI Pattern                            Controller#Action
-        new_user_session GET      /users/sign_in(.:format)               devise/sessions#new
-            user_session POST     /users/sign_in(.:format)               devise/sessions#create
-    destroy_user_session DELETE   /users/sign_out(.:format)              devise/sessions#destroy
- user_omniauth_authorize GET|POST /users/auth/:provider(.:format)        my_devise/omniauth_callbacks#passthru {:provider=>/facebook|google_oauth2/}
-  user_omniauth_callback GET|POST /users/auth/:action/callback(.:format) my_devise/omniauth_callbacks#(?-mix:facebook|google_oauth2)
-           user_password POST     /users/password(.:format)              devise/passwords#create
-       new_user_password GET      /users/password/new(.:format)          devise/passwords#new
-      edit_user_password GET      /users/password/edit(.:format)         devise/passwords#edit
-                         PATCH    /users/password(.:format)              devise/passwords#update
-                         PUT      /users/password(.:format)              devise/passwords#update
-cancel_user_registration GET      /users/cancel(.:format)                devise_invitable/registrations#cancel
-       user_registration POST     /users(.:format)                       devise_invitable/registrations#create
-   new_user_registration GET      /users/sign_up(.:format)               devise_invitable/registrations#new
-  edit_user_registration GET      /users/edit(.:format)                  devise_invitable/registrations#edit
-                         PATCH    /users(.:format)                       devise_invitable/registrations#update
-                         PUT      /users(.:format)                       devise_invitable/registrations#update
-                         DELETE   /users(.:format)                       devise_invitable/registrations#destroy
-       user_confirmation POST     /users/confirmation(.:format)          devise/confirmations#create
-   new_user_confirmation GET      /users/confirmation/new(.:format)      devise/confirmations#new
-                         GET      /users/confirmation(.:format)          devise/confirmations#show
-  accept_user_invitation GET      /users/invitation/accept(.:format)     invitations#edit
-  remove_user_invitation GET      /users/invitation/remove(.:format)     invitations#destroy
-         user_invitation POST     /users/invitation(.:format)            invitations#create
-     new_user_invitation GET      /users/invitation/new(.:format)        invitations#new
-                         PATCH    /users/invitation(.:format)            invitations#update
-                         PUT      /users/invitation(.:format)            invitations#update
-             toggle_user PATCH    /admin/users/:id/toggle(.:format)      users#toggle
-                   users GET      /admin/users(.:format)                 users#index
-                         POST     /admin/users(.:format)                 users#create
-                new_user GET      /admin/users/new(.:format)             users#new
-               edit_user GET      /admin/users/:id/edit(.:format)        users#edit
-                    user GET      /admin/users/:id(.:format)             users#show
-                         PATCH    /admin/users/:id(

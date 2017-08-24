@@ -12,18 +12,17 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @roles.each do |role| %>
       <tr>
-        <td><%= role.name %></td>
+        <td><%= link_to "#{role.name}", role , "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= role.description %></td>
-        <td><%= link_to '', role , class: "success button tiny fi-eye", "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= link_to '', edit_role_path(role), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true" %></td>
-        <td><%= link_to '', role, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus" %></td>
+        <td><%= link_to '', role, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus" %></td>
       </tr>
     <% end %>
   </tbody>
