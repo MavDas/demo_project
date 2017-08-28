@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <h2>Select Group Members</h2> 
+<% end %>
+<center>
+  <table> 
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+       
+        <td><%= link_to "#{user.name}", user, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
+         <% if @group.users.include? user %>
+          <td><%= link_to "Remove",remove_member_group_path(:group_id => @group.id, :user_id => user.id), class: "button radius tiny alert", method: :patch %></td>
+        <% else %>
+          <td><%= link_to "Add", group_path(:group_id => @group.id, :user_id => user.id),class: "button radius tiny success", method: :patch %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
+<p>
+<%= link_to "Back to Index", groups_path, class: "button radius tiny primary" %>
+</p>
+<div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden="true" role="dialog"></div>

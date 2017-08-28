@@ -14,3 +14,4 @@ u1 = User.create({name: "Aman", email: "amanvimal@gmail.com", password: "passwor
 u2 = User.create({name: "Maverick", email: "amanvimal@hotmail.com", password: "password", password_confirmation: "password", role_id: r1.id, approved: "true", confirmed_at: Time.now.utc })
 u3 = User.create({name: "Akash", email: "akash@gmail.com", password: "password", password_confirmation: "password", role_id: r2.id, approved: "true", confirmed_at: Time.now.utc })
 u4 = User.create({name: "Prajapati", email: "praja@gmail.com", password: "password", password_confirmation: "password", role_id: r1.id, approved: "true", confirmed_at: Time.now.utc })
+u4 = User.create({name: "Vimal", email: "vimal@gmail.com", password: "password", password_confirmation: "password", role_id: r1.id, approved: "true", confirmed_at: Time.now.utc })

@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804095566) do
+ActiveRecord::Schema.define(version: 20170804095567) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
     t.string   "tel"
-    t.string   "picture"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +38,14 @@ ActiveRecord::Schema.define(version: 20170804095566) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "created_by"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -50,22 +57,22 @@ ActiveRecord::Schema.define(version: 20170804095566) do
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"
 
+  create_table "memberships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "memberships", ["group_id"], name: "index_memberships_on_group_id"
+  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  create_table "sessions", force: :cascade do |t|
-    t.string   "session_id", null: false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

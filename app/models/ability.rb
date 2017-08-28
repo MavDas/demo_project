@@ -8,17 +8,17 @@ class Ability
       if user.admin?
         can :manage, :all
       elsif user.seller?
-        can :read, Item
-        can :create, Item
-        can :finish_signup, User
-        can :update, Item do |item|
-          item.try(:user) == user
+        can :read, Group
+        can :create, Group
+        can :finish_signup, Group
+        can :update, Group do |group|
+          group.try(:user) == user
         end
-        can :destroy, Item do |item|
-          item.try(:user) == user
+        can :destroy, Group do |group|
+          group.try(:user) == user
         end
         elsif user.regular?
-          can :read, Item
+          can :read, Group
           can :finish_signup, User
         end
         

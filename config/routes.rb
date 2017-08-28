@@ -13,11 +13,18 @@ Rails.application.routes.draw do
   
   resources :items
   resources :roles
+  resources :groups do
+    member do
+      get 'add_members'
+      patch 'remove_member'
+    end
+  end
+
   resources :events, only: [:show]
   
   
   authenticated :user do
-    root :to => 'items#index', as: :authenticated_root
+    root :to => 'groups#index', as: :authenticated_root
   end
 
   root to: "welcome#index"

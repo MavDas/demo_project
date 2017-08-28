@@ -7,7 +7,12 @@
   <div class="small-6 columns">
     <%= link_to "New Invitation", new_user_invitation_path, class: "radius button tiny success right inline",  "data-reveal-id" => "invite_modal", "data-reveal-ajax" => "true" %>
   </div>
-    <%= link_to "Unapproved Users", users_path(approved: false), class: "tiny button radius alert" %>
+    <a href="#" class="radius button tiny" data-dropdown="drop" data-options="is_hover:true; hover_timeout:5000">More Options &raquo;</a>
+      <ul id="drop" class="f-dropdown" data-dropdown-content>
+        <li><%= link_to "All Users", users_path %></li>
+        <li><%= link_to "Unapproved Users", users_path(approved: false)%></li>
+      </ul>
+    
 </div>
 <br>
 <table class="small-12 columns" id="users-table">
@@ -42,4 +47,3 @@
 <div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden="true" role="dialog"></div>
 <div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>
 <div id="invite_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>
-
