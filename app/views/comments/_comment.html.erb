@@ -1,0 +1,8 @@
+<div class="comment">
+<div class="comment_content">
+	<p><strong><%= comment.name %></strong></p>
+	<p><%= comment.body %></p>
+	<p><%= time_ago_in_words(comment.created_at) %> Ago</p>
+</div>
+	<%= link_to "Delete", [comment.post.group, comment.post, comment], method: :delete, class: "button alert tiny radius" , data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}%>
+</div>
