@@ -1,0 +1,11 @@
+<div class="post_wrapper">
+<h1 class="title">
+	<%= @post.title%>
+</h1>
+<p class="date">
+	Submitted <%= time_ago_in_words(@post.created_at) %> Ago <%= link_to ' edit', edit_group_post_path(@group, @post), class: "fi-pencil" %> | <%= link_to " delete", group_post_path(@group,@post), method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "fi-minus" %>
+</p>
+<p class="body">
+	<%= @post.body %>
+</p><br>
+</div>

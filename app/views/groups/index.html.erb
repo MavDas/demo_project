@@ -1,5 +1,5 @@
 <% content_for :head do %>
-<h1>Listing Groups</h1>
+	<h1>Listing Groups</h1>
 <% end %>
 
 <p>
@@ -11,8 +11,8 @@
 	<th>Group Creator</th>
 	<th>Edit Members</th>
 	<th>View Posts</th>
-	<th id="hide-header">Edit</th>
-	<th id="hide-header">Destroy</th>
+	<th>Edit</th>
+	<th>Destroy</th>
 	</thead>
 	<tbody>
 	<% @groups.each do |g|%>
@@ -20,7 +20,7 @@
 		<td><%= link_to "#{g.name}", g, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
 		<td><%= g.created_by %></td>
 		<td><%= link_to "Edit", add_members_group_path(g) %></td>
-		<td><%=  	 %></td>
+		<td><%= link_to "View",group_posts_path(g) %></td>
 		<td><%= link_to '', edit_group_path(g), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %></td>
 		<td><% if can? :destroy, g %>
             <%= link_to '', g, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus"%>

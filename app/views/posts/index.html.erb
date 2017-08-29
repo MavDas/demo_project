@@ -1,0 +1,14 @@
+<% content_for :head do %>
+	<h1>Post</h1>
+<% end %>
+
+<p><%= link_to "New Post" , new_group_post_path, class: "button tiny radius success" %></p>
+<% @post.each do |post| %>
+	<div class="post_wrapper">
+		<h2 class="title"><%= link_to "#{post.title}", group_post_path(@group,post) %></h2><br>
+		<p class="date">
+			Submitted <%= time_ago_in_words(post.created_at)%> Ago
+		</p>
+		<p><%= link_to ' edit', edit_group_post_path(@group, post), class: "button tiny radius fi-pencil" %> | <%= link_to " delete", group_post_path(@group,post), method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button radius tiny fi-minus" %></p>
+	</div>
+<% end %>

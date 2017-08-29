@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :items
   resources :roles
   resources :groups do
+    resources :posts
     member do
       get 'add_members'
       patch 'remove_member'
