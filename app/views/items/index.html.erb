@@ -15,23 +15,22 @@
       <th>Description</th>
       <th>Price</th>
       <th>Seller</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
+        <td><%= link_to "#{item.name}", item, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= item.user.name %></td>
-        <td><%= link_to '', item , class: "success button tiny fi-eye", "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td> <% if can? :update, item %>
               <%= link_to '', edit_item_path(item), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true" %>
             <% end %></td>
         <td><% if can? :destroy, item %>
-            <%= link_to '', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "alert button tiny fi-minus"%>
+            <%= link_to '', item, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus"%>
             <% end %></td>
       </tr>
     <% end %>

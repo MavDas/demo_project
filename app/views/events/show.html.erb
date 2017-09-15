@@ -1,0 +1,20 @@
+
+<table class='small-12 columns'>
+	<tr>
+    <th class="text-center">Name</th class="text-center">
+    <th class="text-center">Date</th>
+    <th class="text-center">Creator</th>
+    <th class="text-center">Calendar</th>
+    <th class="text-center">link</th>
+  </tr>
+
+  <% current_user.events.each do |event| %>
+  <tr>
+    <td><%= event.name %></td>
+    <td><%= event.start %></td>
+    <td><%= event.creator %></td>
+    <td><%= event.calendar %></td>
+    <td><%= link_to "#{event.name.first(10)}...", event.link %></td>
+  </tr>
+  <% end %>
+</table>

@@ -17,7 +17,6 @@
       <th>Role</th>
       <th>Email</th>
       <th>Approval Status</th>
-      <th id="hide-header">Show</th>
       <th id="hide-header">Edit</th>
       <th id="hide-header">Destroy</th>
     </tr>
@@ -26,14 +25,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td><%= link_to "#{user.name}", user,"data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= user.role.name %></td>
         <td><%= user.email %></td>
         <td><%= check_box_tag :approved ,user.id, user.approved, 
                 data: { url: toggle_user_path(user.id) }, class: 'user-approved', id: "approved_#{user.id.to_s}" %>
        
         </td>
-        <td><%= link_to '', user, class: "success button tiny fi-eye", "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
         <td><%= link_to '', edit_user_path(user), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %></td>
         <td><%= link_to '', user, method: :delete,  data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus" %></td>
       </tr>

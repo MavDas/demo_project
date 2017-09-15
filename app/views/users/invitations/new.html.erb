@@ -3,7 +3,7 @@
 <% end %>
 
 <a class="close-reveal-modal">&#215;</a><br>
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post}, :remote => true do |f| %>
   <%= devise_error_messages! %>
 
 <div class="row collapse">

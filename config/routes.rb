@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   resources :items
   resources :roles
+  resources :events, only: [:show]
+  
   
   authenticated :user do
     root :to => 'items#index', as: :authenticated_root
