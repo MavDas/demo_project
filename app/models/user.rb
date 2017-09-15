@@ -5,10 +5,16 @@ class User < ActiveRecord::Base
 
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
+
   belongs_to :role
-  has_many :items
   has_many :contacts
   has_many :events
+  has_many :memberships, :dependent => :destroy
+  has_many :groups, through: :memberships
+  belongs_to :group
+  has_many :posts
+  accepts_nested_attributes_for :memberships, :allow_destroy => true
+
   validates_presence_of :name
   before_save :assign_role
 
@@ -25,15 +31,15 @@ class User < ActiveRecord::Base
  		self.role = Role.find_by name: "Regular" if self.role.nil?
  	end
 
- 	def admin?
- 		self.role.name == "Admin"
+ 	def Superadmin?
+ 		self.role.name == "Superadmin"
  	end
  	
- 	def seller?
- 		self.role.name == "Seller"
+ 	def Admin?
+ 		self.role.name == "Admin"
  	end
 
- 	def regular?
+ 	def Regular?
  		self.role.name == "Regular"
  	end
  	
@@ -88,7 +94,9 @@ class User < ActiveRecord::Base
       credentials = oauth.credentials
       data = oauth.info
       user = User.where(:email => data["email"]).first
-
+      if user
+        user.token = credentials.token
+      end
       # Uncomment the section below if you want users to be created if they don't exist
       unless user
         user = User.new({
@@ -100,7 +108,7 @@ class User < ActiveRecord::Base
       end
       user.skip_confirmation!
       user.save!
-      user.get_google_contacts
+      # user.get_google_contacts
       user.get_google_calendars
       user
   end
@@ -126,7 +134,7 @@ class User < ActiveRecord::Base
       else
         picture = nil
       end
-      contacts.build({name: name, email: email, tel: tel})
+      contacts.first_or_create({name: name, email: email, tel: tel})
     end
   end
 
@@ -152,7 +160,7 @@ class User < ActiveRecord::Base
       link = event["htmlLink"] || nil
       calendar = cal["summary"] || nil
 
-      events.build(name: name,
+      events.find_or_create_by(name: name,
                     creator: creator,
                     status: status,
                     start: start,

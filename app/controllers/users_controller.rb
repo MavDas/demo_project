@@ -7,11 +7,11 @@
   # GET /users
   # GET /users.json
   def index
-    if params[:approved] == "false"
-      @users = User.where(approved: false)
-    else
-      @users = User.all
-    end
+      if params[:approved] == "false"
+        @users = User.where(approved: false)
+      else
+        @users = User.all
+      end
   end
 
   # GET /users/1
@@ -103,6 +103,7 @@
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.js {}
     end
   end
   protected

@@ -38,6 +38,7 @@ footer {
 	opacity: 0.6;
 	position : fixed;
 	bottom: 0;
+	left: 0;
 	color: black;
 	padding: 10px;
 	text-align: center;
@@ -72,6 +73,10 @@ table, #roles-table{
 table, #items-table{
 	padding: 0;
 }
+table, #events-table{
+	padding: 0;
+}
+
 
 p{
 	width:100%;
@@ -96,6 +101,10 @@ h1,h2{
 	text-align: center;
 }
 
+h3,strong{
+	text-align: center;
+}
+
 #error_explanation{
   margin: auto;
   margin-bottom: 10px;
@@ -103,4 +112,42 @@ h1,h2{
 
 .field_with_errors{
   background-color: rgba(255,0,0,0.6);
+}
+
+.post_wrapper{
+	box-shadow: 2px 2px 5px #bed3f4;
+	background-color: white;
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+	margin-bottom: 5px;
+	border: 1px solid #bed3f4;
+}
+.post_wrapper_show{
+	box-shadow: 2px 2px 6px #bed3f4;
+	background-color: white;
+	margin: auto;
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #bed3f4;
+}
+
+.comment_content {
+	box-shadow: 3px 0px 0.5px #ff4f4f;
+	background-color: #bed3f4;
+	padding: 8px;
+}
+#comments{
+	width: 40%;
+	margin: auto;
+}
+
+.group_wrapper{
+	box-shadow: 2px 2px 5px #bed3f4;
+	background-color: white;
+	margin: auto;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 5px;
+	border: 1px solid #bed3f4;
 }

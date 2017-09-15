@@ -1,0 +1,4 @@
+$('.destroy_group').bind('ajax:success', function() {
+   $(this).closest('.group_wrapper').fadeOut();
+   $('.notice').fadeOut();
+});

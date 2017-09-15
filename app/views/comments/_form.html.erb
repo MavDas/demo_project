@@ -1,0 +1,5 @@
+<%= form_for [@group,@post,@post.comments.build] do |f| %>
+		<%= f.hidden_field :name, value: "#{current_user.name}" %>
+		<%= f.text_area :body %>
+		<%= f.submit "Comment"%>
+<% end %>

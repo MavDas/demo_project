@@ -1,0 +1,24 @@
+<li>
+	<div class="comment_content">
+		<strong id="commentor"><%= comment.name %></strong> <span id="comment_data"><%= comment.body %></span>
+		<br>
+		<%if can? :edit, comment %>
+			<%= link_to "  Edit ".html_safe, edit_group_post_comment_path(@group,@post,comment), class: "fi-pencil","data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"%> |
+		<% end %>
+		<% if can? :destroy, comment %>
+			<%= link_to " Delete", group_post_comment_path(@group,@post,comment), method: :delete, class: "fi-minus destroy_comment" , data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, remote: true %>
+		<% end %>
+		<br>
+		<%= time_ago_in_words(comment.created_at) %> Ago
+		
+		<%= form_for [@group, @post,comment, Comment.new] do |f| %>
+      <%= f.text_area :body, placeholder: "Add a Reply" %>
+      <%= f.submit "Reply", class: "round tiny button primary" %>
+    <% end %>
+    <ul>
+    	<%= render( partial: 'comments/comment', collection: comment.comments ) %>
+    </ul>
+  </div>
+</li>
+
+<div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>

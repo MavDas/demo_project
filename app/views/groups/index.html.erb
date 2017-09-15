@@ -1,0 +1,31 @@
+<% content_for :head do %>
+	<h1>Listing Groups</h1>
+<% end %>
+
+<p>
+	<%= link_to "Create Group", new_group_path, class: "radius button tiny success" %>
+</p>
+<% @groups.order(updated_at: :desc).each do |g|%>
+	
+	<% if (g.is_public) || (@member.where(group_id: g.id).present?) || current_user.Superadmin? %>
+		<div class="group_wrapper">
+			<h4><%= link_to "#{g.name}", g, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></h4>
+			Group Created By <strong><%= g.created_by %></strong>
+			<% if can? :read, g %>
+				<%= link_to " Posts",group_posts_path(g), class: "fi-eye" %> | 
+			<% end %>
+			<% if can? :edit, g %>
+				<%= link_to ' edit', edit_group_path(g), class: "fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %> | 
+			<% end %>
+			<% if can? :destroy, g %>
+		  	<%= link_to ' remove', g, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'},remote: true, class: "fi-minus destroy_group"%>
+			<% end %>
+			<hr>
+			<%= g.description %>
+		</div>
+	<% end %>
+<% end %>
+
+
+<div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden="true" role="dialog"></div>
+<div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>

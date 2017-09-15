@@ -1,0 +1,4 @@
+$('.destroy_post').bind('ajax:success', function() {
+   $(this).closest('.post_wrapper').fadeOut();
+   $('.callout').fadeOut();
+});

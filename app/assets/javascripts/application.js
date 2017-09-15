@@ -47,3 +47,21 @@ $(document).ready(function(){
 	//sPaginationType: "simple"
 	bJQueryUI: true
 });
+
+$(document).ready(function(){
+	$('#events-table').dataTable({
+		"aLengthMenu": [[5,10,15,20,-1], [5,10,15,20,"All"]],
+		"iDisplayLength": 5
+	});
+	//sPaginationType: "simple"
+	bJQueryUI: true
+});
+
+
+$(function(){
+	$('#invite_modal').on("click","#new-invitation",function(e){
+		if(this.submit){
+			$(this).foundation('reveal', 'close');
+		}
+	});
+});
