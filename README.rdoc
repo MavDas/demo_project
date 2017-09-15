@@ -42,7 +42,7 @@
     gem 'web-console', '~> 2.0'
     gem 'spring'
     gem 'pg'
-	gem 'rails_12factor'
+    gem 'rails_12factor'
   
 * Tables created:
     User
