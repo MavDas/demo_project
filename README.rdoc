@@ -1,13 +1,14 @@
 == README
 
-The User Management Application is constructed with Admin, User and Seller.
-The application is based on a store set up.
-
 * Implementations:
-    Restricted Access using CanCanCan
-    User login using Devise
-    Bootstrap for basic front end using Foundation-rails
-    Seperate Admin Dashboard`
+    Restricted Access using CanCanCan.
+    User login using Devise.
+    Zurb Foundation for basic front end using Foundation-rails.
+    Seperate Admin Dashboard.
+    User has ability to create groups and add registered members to it.
+    User can create posts that members can view
+    Users can Comment for posts and reply for comments
+    Comments and replies have been implemented in nested format.
 
 * Ruby version
     - ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
@@ -18,6 +19,8 @@ The application is based on a store set up.
 * Gems installed: 
     gem 'rails', '4.2.9'
     gem 'sqlite3'
+    gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+    gem 'sweet-alert2-rails'
     gem 'sass-rails', '~> 5.0
     gem 'uglifier', '>= 1.3.0'
     gem 'coffee-rails', '~> 4.1.0'
@@ -28,8 +31,25 @@ The application is based on a store set up.
     gem 'devise'
     gem 'cancancan', '~> 1.10'
     gem 'foundation-rails'
+    gem 'devise_invitable'
+    gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+    gem 'foundation-icons-sass-rails',  '~> 3.0.0'
+    gem 'omniauth'
+    gem 'omniauth-facebook'
+    gem "omniauth-google-oauth2"
+    gem 'puma'
+    gem 'byebug'
+    gem 'web-console', '~> 2.0'
+    gem 'spring'
+    gem 'pg'
+	gem 'rails_12factor'
   
-* Databases created:
+* Tables created:
     User
-    Item
+    Group
     Role
+    Contact
+    Event
+    Membership
+    Comment
+    Post
