@@ -10,13 +10,12 @@ $(function(){
 				data: {"approved": approval}	
 			});
 		}
-		else{
+		else {
 			$.ajax({
 				url: url,
 				type: 'PATCH',
 				data: {"approved": approval}	
 			});
-		}
-		
+		}	
 	});
 });

@@ -5,23 +5,23 @@
   <%= devise_error_messages! %>
 
   <div class="row collapse">
-  	<div class="small-3 columns">
-	    <%= f.label :email, class: "right inline" %>
-	  </div>
-	  <div class="small-9 columns">
-	    <%= f.email_field :email, autofocus: true %>
-	  </div>
+    <div class="small-3 columns">
+      <%= f.label :email, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.email_field :email, autofocus: true %>
+    </div>
   </div>
 
   <div class="row collapse">
-  	<div class="small-9 small-offset-3 columns">	
-	    <%= f.submit "Resend unlock instructions", class: "round button tiny alert" %>
-	   </div>
+    <div class="small-9 small-offset-3 columns">  
+      <%= f.submit "Resend unlock instructions", class: "round button tiny alert" %>
+     </div>
   </div>
 <% end %>
 
 <div class="row collapse">
-	<div class="small-9 small-offset-3 columns">
-		<%= render "devise/shared/links" %>
-	</div>
+  <div class="small-9 small-offset-3 columns">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

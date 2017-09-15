@@ -1,5 +1,5 @@
 <% content_for :head do %>
-	<h2><%= t 'devise.invitations.edit.header' %></h2>
+  <h2><%= t 'devise.invitations.edit.header' %></h2>
 <% end %>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
@@ -9,27 +9,27 @@
   <% if f.object.class.require_password_on_accepting %>
 
   <div class="row collapse">
-  	<div class="small-3 columns">
-			<%= f.label :password , class: "right inline" %>
-		</div>
-		<div class="small-9 columns">
-		  <%= f.password_field :password %>
-		</div>
-	</div>
+    <div class="small-3 columns">
+      <%= f.label :password , class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password %>
+    </div>
+  </div>
 
   <div class="row collapse">
-  	<div class="small-3 columns">
-		  <%= f.label :password_confirmation, class: "right inline" %>
-		</div>
-		<div class="small-9 columns">
-		  <%= f.password_field :password_confirmation %>
-		</div>
-	</div>
+    <div class="small-3 columns">
+      <%= f.label :password_confirmation, class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
   <% end %>
 
   <div class="row collapse">
-  	<div class="small-9 small-offset-3 columns">
-		  <%= f.submit t("devise.invitations.edit.submit_button"), class: "round button tiny warning" %>
-		</div>
-	</div>
+    <div class="small-9 small-offset-3 columns">
+      <%= f.submit t("devise.invitations.edit.submit_button"), class: "round button tiny warning" %>
+    </div>
+  </div>
 <% end %>

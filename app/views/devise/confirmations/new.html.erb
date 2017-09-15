@@ -6,18 +6,18 @@
   <%= devise_error_messages! %>
 
   <div class="row collapse">
-  	<div class="small-3 columns">
-    	<%= f.label :email, class: "right inline" %>
+    <div class="small-3 columns">
+      <%= f.label :email, class: "right inline" %>
     </div>
     <div class="small-9 columns">
-    	<%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true %>
     </div>
   </div>
 
 
   <div class="row collapse">
-  	<div class="small-9 small-offset-3 columns">
-    	<%= f.submit "Resend confirmation instructions", class: "round button tiny success" %>
+    <div class="small-9 small-offset-3 columns">
+      <%= f.submit "Resend confirmation instructions", class: "round button tiny success" %>
     </div>
   </div>
 <% end %>

@@ -2,4 +2,4 @@ $('.destroy_comment').bind('ajax:success', function() {
   $(this).closest('.comment_content').fadeOut();
   $('#comments_count').html("<%= @post.comments.count %> Comments");
   $('.notice').html("Comment has been removed").fadeOut(5000);
-});	
+});  

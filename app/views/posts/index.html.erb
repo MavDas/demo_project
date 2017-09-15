@@ -1,14 +1,14 @@
 <% content_for :head do %>
-	<h1>Post</h1>
+  <h1>Post</h1>
 <% end %>
 <p>
-	<%= link_to "New Post" , new_group_post_path, class: "button tiny radius success" %>
-	|	<%= link_to "Back To Groups" , groups_path, class: "button tiny radius warning" %>
+  <%= link_to "New Post" , new_group_post_path, class: "button tiny radius success" %>
+  |  <%= link_to "Back To Groups" , groups_path, class: "button tiny radius warning" %>
 </p> 
 <% @post.order(updated_at: :desc).each do |post| %>
-	<div class="post_wrapper">
-		<h4 class="title"><%= link_to "#{post.title}", group_post_path(@group,post) %></h4>
-			Submitted by <strong><%= post.user.name %></strong> <%= time_ago_in_words(post.created_at)%> Ago <br>
-		<%= link_to ' edit', edit_group_post_path(@group, post), class: "fi-pencil" %> | <%= link_to " delete", group_post_path(@group,post), method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'},remote: true, class: "fi-minus destroy_post" %>
-	</div>
+  <div class="post_wrapper">
+    <h4 class="title"><%= link_to "#{post.title}", group_post_path(@group,post) %></h4>
+      Submitted by <strong><%= post.user.name %></strong> <%= time_ago_in_words(post.created_at)%> Ago <br>
+    <%= link_to ' edit', edit_group_post_path(@group, post), class: "fi-pencil" %> | <%= link_to " delete", group_post_path(@group,post), method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'},remote: true, class: "fi-minus destroy_post" %>
+  </div>
 <% end %>

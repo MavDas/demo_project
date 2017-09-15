@@ -3,51 +3,51 @@
 <h3> <strong>Showing Group</strong> </h3>
 
 <center>
-	<table>
-			<tr>
-				<td>
-					<strong>Name:</strong>
-				</td>
-				<td>
-					<%= @group.name %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Description:</strong>
-				</td>
-				<td>
-					<%= @group.description %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Creator:</strong>
-				</td>
-				<td>
-					<%= @group.created_by %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Public:</strong>
-				</td>
-				<td>
-					<%= @group.is_public %>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>Members:</strong>
-				</td>
-				<td>
-				<% @members.each do |member|%>
-			  	<% if member.group_id == @group.id %>
-					  <% id = member.user_id %>
-					  <%= @users.find(id).name %> | 
-					<% end %>
-			  <% end %>
-			 	</td>
-			</tr>
-	</table>
+  <table>
+      <tr>
+        <td>
+          <strong>Name:</strong>
+        </td>
+        <td>
+          <%= @group.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Description:</strong>
+        </td>
+        <td>
+          <%= @group.description %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Creator:</strong>
+        </td>
+        <td>
+          <%= @group.created_by %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Public:</strong>
+        </td>
+        <td>
+          <%= @group.is_public %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Members:</strong>
+        </td>
+        <td>
+        <% @members.each do |member|%>
+          <% if member.group_id == @group.id %>
+            <% id = member.user_id %>
+            <%= @users.find(id).name %> | 
+          <% end %>
+        <% end %>
+         </td>
+      </tr>
+  </table>
 </center>

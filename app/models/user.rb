@@ -28,32 +28,32 @@ class User < ActiveRecord::Base
   end
 
   def assign_role
- 		self.role = Role.find_by name: "Regular" if self.role.nil?
- 	end
+     self.role = Role.find_by name: "Regular" if self.role.nil?
+   end
 
- 	def Superadmin?
- 		self.role.name == "Superadmin"
- 	end
- 	
- 	def Admin?
- 		self.role.name == "Admin"
- 	end
+   def Superadmin?
+     self.role.name == "Superadmin"
+   end
+   
+   def Admin?
+     self.role.name == "Admin"
+   end
 
- 	def Regular?
- 		self.role.name == "Regular"
- 	end
- 	
- 	def active_for_authentication?
- 		super && approved?
- 	end
+   def Regular?
+     self.role.name == "Regular"
+   end
+   
+   def active_for_authentication?
+     super && approved?
+   end
 
- 	def inactive_message
- 		if !approved?
- 			:not_approved
- 		else
- 			super
- 		end
- 	end
+   def inactive_message
+     if !approved?
+       :not_approved
+     else
+       super
+     end
+   end
 
   def self.from_omniauth(auth)              # getting info from user social account and assigning them in table    
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -171,7 +171,7 @@ class User < ActiveRecord::Base
   end
 
 
- 	def self.send_reset_password_instructions(attributes={})
+   def self.send_reset_password_instructions(attributes={})
     recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
     if !recoverable.approved?
      recoverable.errors[:base] << I18n.t("devise.failure.not_approved")
