@@ -5,31 +5,27 @@
 <p>
 	<%= link_to "Create Group", new_group_path, class: "radius button tiny success" %>
 </p>
-<table id="users-table">
-<thead>
-	<th>Group Name</th>
-	<th>Group Creator</th>
-	<th>Edit Members</th>
-	<th>View Posts</th>
-	<th>Edit</th>
-	<th>Destroy</th>
-	</thead>
-	<tbody>
-	<% @groups.each do |g|%>
-	<tr>
-		<td><%= link_to "#{g.name}", g, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></td>
-		<td><%= g.created_by %></td>
-		<td><%= link_to "Edit", add_members_group_path(g) %></td>
-		<td><%= link_to "View",group_posts_path(g) %></td>
-		<td><%= link_to '', edit_group_path(g), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %></td>
-		<td><% if can? :destroy, g %>
-            <%= link_to '', g, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus"%>
-            <% end %></td>
-	</tr>	
+<% @groups.order(updated_at: :desc).each do |g|%>
+	
+	<% if (g.is_public) || (@member.where(group_id: g.id).present?) || current_user.Superadmin? %>
+		<div class="group_wrapper">
+			<h4><%= link_to "#{g.name}", g, "data-reveal-id" => "show_modal", "data-reveal-ajax" => "true" %></h4>
+			Group Created By <strong><%= g.created_by %></strong>
+			<% if can? :read, g %>
+				<%= link_to " Posts",group_posts_path(g), class: "fi-eye" %> | 
+			<% end %>
+			<% if can? :edit, g %>
+				<%= link_to ' edit', edit_group_path(g), class: "fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %> | 
+			<% end %>
+			<% if can? :destroy, g %>
+		  	<%= link_to ' remove', g, method: :delete, data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'},remote: true, class: "fi-minus destroy_group"%>
+			<% end %>
+			<hr>
+			<%= g.description %>
+		</div>
 	<% end %>
-	</tbody>
-</table>
-</div>
+<% end %>
+
 
 <div id="show_modal" class="reveal-modal tiny" data-reveal aria-hidden="true" role="dialog"></div>
 <div id="edit_modal" class="reveal-modal small" data-reveal aria-hidden="true" role="dialog"></div>

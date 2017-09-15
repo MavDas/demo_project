@@ -103,6 +103,7 @@
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.js {}
     end
   end
   protected

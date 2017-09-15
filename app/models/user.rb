@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   belongs_to :role
-  has_many :items
   has_many :contacts
   has_many :events
   has_many :memberships, :dependent => :destroy
   has_many :groups, through: :memberships
   belongs_to :group
   has_many :posts
+  accepts_nested_attributes_for :memberships, :allow_destroy => true
 
   validates_presence_of :name
   before_save :assign_role
@@ -31,15 +31,15 @@ class User < ActiveRecord::Base
  		self.role = Role.find_by name: "Regular" if self.role.nil?
  	end
 
- 	def admin?
- 		self.role.name == "Admin"
+ 	def Superadmin?
+ 		self.role.name == "Superadmin"
  	end
  	
- 	def seller?
- 		self.role.name == "Seller"
+ 	def Admin?
+ 		self.role.name == "Admin"
  	end
 
- 	def regular?
+ 	def Regular?
  		self.role.name == "Regular"
  	end
  	

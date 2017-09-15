@@ -4,40 +4,106 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
 
-      user ||= User.new # guest user (not logged in)
-      if user.admin?
-        can :manage, :all
-      elsif user.seller?
-        can :read, Group
-        can :create, Group
-        can :finish_signup, Group
-        can :update, Group do |group|
-          group.try(:user) == user
-        end
-        can :destroy, Group do |group|
-          group.try(:user) == user
-        end
-        elsif user.regular?
-          can :read, Group
-          can :finish_signup, User
-        end
-        
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    user ||= User.new # guest user (not logged in)
+    if user.Superadmin?   # Super Admin can access all
+      can :manage, :all    
+    end    
+    if user.Admin?     # Admin have limited access.It can read read and create user but deleting power is only to super admin       
+      can :read, User 
+      can :new, Group 
+      can :create, Group
+      can :read, Group
+
+      can :update, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)  
+      end
+      
+      can :destroy, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)   
+      end 
+
+      can :edit, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)  
+      end  
+
+      can :add_members, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)   
+      end
+
+      can :add_member, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)   
+      end
+
+      can :remove_member, Group do |group|         
+        group.try(:user) == user || group.created_by == (user.name)   
+      end 
+
+      can :edit, Post do |post|         
+        post.try(:user) == user || post.user_id == user.id       
+      end
+
+      can :update, Post do |post|         
+        post.try(:user) == user || post.user_id == user.id       
+      end
+
+      can :destroy, Post do |post|         
+        post.try(:user) == user || post.user_id == user.id       
+      end
+
+      can :create, Post do |post|
+        post.try(:user) == user
+      end
+      can :read, Post
+      can :new, Post do |post|
+        post.try(:user) == user
+      end
+
+      can :update, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name) 
+      end   
+
+      can :create, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)  
+      end  
+
+      can :destroy, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)  
+      end   
+
+      can :read, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)  
+      end  
+
+      can :edit, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)  
+      end  
+
+    end    
+    if user.Regular?  # Regular user can only view Groups.It cant even access admin panel      
+      can :read, Event 
+      can :read, Group         
+      can :read, Post  
+
+      can :update, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)
+      end
+
+      can :create, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)
+      end
+
+      can :destroy, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)
+      end
+
+      can :read, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)
+      end
+
+      can :edit, Comment do |comment|         
+        comment.try(:user) == user || comment.name == (user.name)
+      end
+
+    end        
   end
 end

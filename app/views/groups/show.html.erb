@@ -1,9 +1,6 @@
 <a class="close-reveal-modal" aria-label="close">&#215;</a>
 
-<h1> Showing Group </h1>
-
-
-
+<h3> <strong>Showing Group</strong> </h3>
 
 <center>
 	<table>
@@ -33,13 +30,21 @@
 			</tr>
 			<tr>
 				<td>
+					<strong>Public:</strong>
+				</td>
+				<td>
+					<%= @group.is_public %>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<strong>Members:</strong>
 				</td>
 				<td>
 				<% @members.each do |member|%>
 			  	<% if member.group_id == @group.id %>
 					  <% id = member.user_id %>
-					  <%= @users.find(id).name %>
+					  <%= @users.find(id).name %> | 
 					<% end %>
 			  <% end %>
 			 	</td>

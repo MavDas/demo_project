@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804095569) do
+ActiveRecord::Schema.define(version: 20170804095571) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
@@ -52,23 +54,15 @@ ActiveRecord::Schema.define(version: 20170804095569) do
     t.string   "name"
     t.string   "description"
     t.string   "created_by"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "is_public",   default: false, null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.decimal  "price",       precision: 5, scale: 2
-    t.integer  "user_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "items", ["user_id"], name: "index_items_on_user_id"
+  add_index "groups", ["is_public"], name: "index_groups_on_is_public"
 
   create_table "memberships", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

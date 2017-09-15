@@ -22,8 +22,8 @@
       <th>Role</th>
       <th>Email</th>
       <th>Approval Status</th>
-      <th id="hide-header">Edit</th>
-      <th id="hide-header">Destroy</th>
+      <th>Edit</th>
+      <th>Destroy</th>  
     </tr>
   </thead>
 
@@ -38,7 +38,7 @@
        
         </td>
         <td><%= link_to '', edit_user_path(user), class: "button tiny fi-pencil", "data-reveal-id" => "edit_modal", "data-reveal-ajax" => "true"  %></td>
-        <td><%= link_to '', user, method: :delete,  data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, class: "alert button tiny fi-minus" %></td>
+        <td><%= link_to '', user, method: :delete,  data: { confirm: 'Are you Sure?', 'confirm-button-text': 'Yes I am' , 'cancel-button-text': 'No way', 'confirm-button-color': '#66CD00'}, remote: true, class: "alert button tiny fi-minus destroy_user" , id: "delete_user" %></td>
       </tr>
     <% end %>
   </tbody>

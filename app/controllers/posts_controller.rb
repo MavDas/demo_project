@@ -2,9 +2,10 @@ class PostsController < ApplicationController
 	before_filter :authenticate_user!
 	load_and_authorize_resource	
 	
-	def index		
-		@group = Group.find(params[:group_id])		
-		@post= Post.where(group_id: @group.id)	
+	def index
+	 	if check_access?
+			@post= Post.where(group_id: @group.id)	
+		end
 	end	
 
 	def new		
@@ -12,21 +13,23 @@ class PostsController < ApplicationController
 	end	
 
 	def create		
-		@group = Group.find(params[:group_id])		
-		@post = Post.new(post_params)    
-		@post.user_id = current_user.id		
-		@post.group_id = @group.id				
-		if @post.save!		  
-			flash[:success] = "Post created!"		  
-			redirect_to group_posts_path		
-		else		  
-			redirect_to root_url		
-		end	
+		if check_access?
+			@post = Post.new(post_params)    
+			@post.user_id = current_user.id		
+			@post.group_id = @group.id				
+			if @post.save!		  
+				flash[:success] = "Post created!"		  
+				redirect_to group_posts_path		
+			else		  
+				redirect_to root_url		
+			end	
+		end
 	end	
 
 	def show		
-		@group = Group.find(params[:group_id])    
-		@post = Post.find(params[:id])
+		if check_access?
+			@post = Post.find(params[:id])
+		end
 	end	
 
 	def edit
@@ -46,7 +49,7 @@ class PostsController < ApplicationController
     @post.destroy
     respond_to do |format|
       format.html { redirect_to group_posts_url, notice: 'Post was successfully destroyed.' }
-      # format.json { head :no_content }
+      format.js {}
     end
   end
 

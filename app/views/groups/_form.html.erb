@@ -27,9 +27,35 @@
       <%= f.text_field :description %>
     </div>
   </div>
-  
-  <%= f.hidden_field :created_by, value: "#{current_user.name}" %>
-  
+  <div class="row collapse">
+    <div class="small-3 columns">
+      <%= f.label :is_public,value: "Public", class: "right inline" %>
+    </div>
+    <div class="small-9 columns">
+      <%= f.check_box :is_public %>
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="small-9 small-offset-3 columns">
+  <h3>Add Members</h3>
+    </div>
+  </div>
+  <%= f.fields_for :memberships, @memberships do |member| %>
+    <div class="row collapse">
+      <div class="small-9 small-offset-3 columns">
+        <% if member.object.user.name != current_user.name %>
+          <div class="row collapse">
+            <div class="small-2 columns">
+              <%= member.label :user_id, value: "#{member.object.user.name}", class: "right inline" %>
+            </div>
+            <div class="small-10 columns">
+              <%= member.check_box :user_id, {checked: false}, member.object.user.id, nil %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   <div class="row">
     <div class="small-9 small-offset-5 columns">
       <%= f.submit "Submit group", class: "round button tiny success" %>

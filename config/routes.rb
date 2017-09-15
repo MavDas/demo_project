@@ -11,15 +11,17 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :items
   resources :roles
+  
   resources :groups do
     resources :posts do
-      resources :comments
+      resources :comments do
+        resources :comments
+      end
     end
     member do
-      get 'add_members'
       patch 'remove_member'
+      patch 'add_member'
     end
   end
 

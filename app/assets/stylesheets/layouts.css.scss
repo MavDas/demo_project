@@ -98,7 +98,7 @@ label{
 }
 
 .reveal-modal{
-  background-color: grey;
+  background-color: #339696;
 }
 
 #roles-table_info{
@@ -140,4 +140,43 @@ table tr td {
   font-size: 0.875rem;
   color: #222222;
   text-align: center;
+  width: 200px;
+  table-layout: fixed;
+}
+
+table {
+  padding: 0;
+}
+
+#comment_body {
+  border-radius: 10px;
+  width: 95%;
+}
+
+#new_comment {
+  margin: auto;
+}
+
+#commentor {
+  font-size: 1.2em;  
+}
+
+ul {
+  list-style-type: none;
+}
+
+#comment_data {
+  font-size: 1.1em;
+}
+
+#show_modal {
+  padding: 0px;
+}
+
+#edit_modal {
+  padding: 0px;
+}
+
+input[type = "checkbox"] {
+  margin-top: 1em;
 }
