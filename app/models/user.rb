@@ -113,10 +113,10 @@ class User < ActiveRecord::Base
       user
   end
 
-  def call_api(url)
-    response = open(url)
-    JSON.parse(response.read)
-  end
+  # def call_api(url)
+  #   response = open(url)
+  #   JSON.parse(response.read)
+  # end
 
 
   def get_google_contacts

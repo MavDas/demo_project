@@ -8,11 +8,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
+    group = Group.new(group_params)
     respond_to do |format|
-      @group.created_by = current_user.name
-      if @group.save
-        @group.users << current_user
+      group.created_by = current_user.name
+      if group.save
+        group.users << current_user
         format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
         # format.json { render :show, status: :created, location: @group }
       else

@@ -35,6 +35,7 @@ gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 # gem 'google-api-client', '~> 0.11', require: 'google/apis/calendar_v3'
 gem 'puma'
+gem 'haml-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -55,10 +56,10 @@ group :development do
 end
 
 group :development do
-	gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
-	gem 'pg'
-	gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end

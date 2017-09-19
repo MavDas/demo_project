@@ -32,59 +32,59 @@
 }
 
 footer {
-	width: 100%;
-	line-height: 1.5em;
-	background-color: lightblue;
-	opacity: 0.6;
-	position : fixed;
-	bottom: 0;
-	left: 0;
-	color: black;
-	padding: 10px;
-	text-align: center;
+  width: 100%;
+  line-height: 1.5em;
+  background-color: lightblue;
+  opacity: 0.6;
+  position : fixed;
+  bottom: 0;
+  left: 0;
+  color: black;
+  padding: 10px;
+  text-align: center;
 }
 
 #content{
-	padding-bottom: 40px;
-	margin-top: 10px;
+  padding-bottom: 40px;
+  margin-top: 10px;
 }
 
 #hide-header{
-	display: none;
+  display: none;
 }
 
 #application-name{
-	color: white;
-	padding-left: 10px;
+  color: white;
+  padding-left: 10px;
 }
 
 #show{
-	text-align: center;	
+  text-align: center;  
 }
 
 table, #users-table{
-	padding: 0;
+  padding: 0;
 }
 
 table, #roles-table{
-	padding: 0;
+  padding: 0;
 }
 
 table, #items-table{
-	padding: 0;
+  padding: 0;
 }
 table, #events-table{
-	padding: 0;
+  padding: 0;
 }
 
 p{
-	width:100%;
-	text-align: center;
+  width:100%;
+  text-align: center;
 }
 
 #container{
-	background-image: url("/back-dp.jpg");
-	position: fixed;
+  background-image: url("/back-dp.jpg");
+  position: fixed;
   left: 0;
   right: 0;
   z-index: -1;
@@ -97,11 +97,11 @@ p{
 }
 
 h1,h2{
-	text-align: center;
+  text-align: center;
 }
 
 h3,strong{
-	text-align: center;
+  text-align: center;
 }
 
 #error_explanation{
@@ -114,39 +114,39 @@ h3,strong{
 }
 
 .post_wrapper{
-	box-shadow: 2px 2px 5px #bed3f4;
-	background-color: white;
-	margin: auto;
-	width: 80%;
-	padding: 10px;
-	margin-bottom: 5px;
-	border: 1px solid #bed3f4;
+  box-shadow: 2px 2px 5px #bed3f4;
+  background-color: white;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #bed3f4;
 }
 .post_wrapper_show{
-	box-shadow: 2px 2px 6px #bed3f4;
-	background-color: white;
-	margin: auto;
-	width: 100%;
-	padding: 10px;
-	border: 2px solid #bed3f4;
+  box-shadow: 2px 2px 6px #bed3f4;
+  background-color: white;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #bed3f4;
 }
 
 .comment_content {
-	box-shadow: 3px 0px 0.5px #ff4f4f;
-	background-color: #bed3f4;
-	padding: 8px;
+  box-shadow: 3px 0px 0.5px #ff4f4f;
+  background-color: #bed3f4;
+  padding: 8px;
 }
 #comments{
-	width: 40%;
-	margin: auto;
+  width: 40%;
+  margin: auto;
 }
 
 .group_wrapper{
-	box-shadow: 2px 2px 5px #bed3f4;
-	background-color: white;
-	margin: auto;
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 5px;
-	border: 1px solid #bed3f4;
+  box-shadow: 2px 2px 5px #bed3f4;
+  background-color: white;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #bed3f4;
 }

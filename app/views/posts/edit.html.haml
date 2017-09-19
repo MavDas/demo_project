@@ -1,0 +1,22 @@
+- content_for :head do
+  %h1 Edit Post
+#form
+  = form_for [@group, @post], url: group_post_path do |f|
+    - if @post.errors.any?
+      .error
+        %h2
+          = pluralize(@post.errors.count, "error")
+          prohibited this post from being saved:
+        %ul
+          - @post.errors.full_messages.each do |message|
+            %li= message
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+    %p
+      = f.label :body
+      %br/
+      = f.text_area :body
+    %p
+      = f.submit "Update Post", class: "round button tiny success"

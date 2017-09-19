@@ -14,10 +14,10 @@ class PostsController < ApplicationController
 
   def create
     if check_access?
-      @post = Post.new(post_params)
-      @post.user_id = current_user.id
-      @post.group_id = @group.id
-      if @post.save!
+      post = Post.new(post_params)
+      post.user_id = current_user.id
+      post.group_id = @group.id
+      if post.save!
         flash[:success] = "Post created!"
         redirect_to group_posts_path
       else
