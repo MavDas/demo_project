@@ -3,8 +3,11 @@
 * Implementations:
     Restricted Access using CanCanCan.
     User login using Devise.
+    Added User Login through Facebook and Google+
+    Used Google, Facebook, Twitter APIs.
+    fetching events from Google Calendar.
     Zurb Foundation for basic front end using Foundation-rails.
-    Seperate Admin Dashboard.
+    Separate Admin Dashboard.
     User has ability to create groups and add registered members to it.
     User can create posts that members can view
     Users can Comment for posts and reply for comments
