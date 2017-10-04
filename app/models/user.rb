@@ -2,7 +2,9 @@ require "open-uri"
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-
+  NAME_REGEX = /\A[^0-9`!@#\$%\^&*+_=]+\z/
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
@@ -15,7 +17,11 @@ class User < ActiveRecord::Base
   has_many :posts
   accepts_nested_attributes_for :memberships, :allow_destroy => true
 
-  validates_presence_of :name
+  validates :name, presence: true 
+  validates_format_of :name, :with => NAME_REGEX, message: "Name can't be blank"  
+  validates :email, presence: true
+  validates_format_of :email, :with => EMAIL_REGEX , message: "Please enter a valid email id"
+
   before_save :assign_role
 
   def accept_invitation!
