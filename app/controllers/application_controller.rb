@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   def check_access? # for checking access rights in posts and comments controller
     member = Membership.where(user_id: current_user.id)     
     @group = Group.find(params[:group_id])      
-    (@group.is_public) || (member.where(group_id: @group.id).present?) || current_user.superadmin?    
+    (@group.is_public) || (member.where(group_id: @group.id).present?) || current_user.Superadmin?    
   end
   
 end
