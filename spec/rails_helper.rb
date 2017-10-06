@@ -4,7 +4,12 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+require 'devise'
 require 'rspec/rails'
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'database_cleaner'
 require 'capybara/rspec'
@@ -63,7 +68,6 @@ end
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
   # Filter lines from Rails gems in backtraces.

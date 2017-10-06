@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   context 'validations' do
     
-    before { FactoryGirl.build(:user)}
+    before(:each) { FactoryGirl.build(:user)}
 
     it{ should validate_presence_of(:name) }  
     it{ should validate_presence_of(:email) }
@@ -11,8 +12,9 @@ RSpec.describe User, type: :model do
     
     it "is invalid without a name" do
       user = User.new(name: nil)
-      user.valid?
-      expect(user.errors[:name]).to include("Name can't be blank")
+      # user.valid?
+      # expect(user.errors[:name]).to include("Name can't be blank")
+      expect(user).to_not be_valid
     end
     
     it "is invalid without an email address" do
@@ -44,7 +46,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:posts) }
     it { should have_many(:events) }
     it { should belong_to(:role) }
-    it "should belong to group" do                 #Checking association user belongs to group
+    
+    it "should belong to group manual" do                 #Checking association user belongs to group
       t = User.reflect_on_association(:group)
       expect(t.macro).to eq(:belongs_to)
     end

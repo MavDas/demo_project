@@ -7,9 +7,10 @@ RSpec.describe Comment do
     expect(comment).to be_valid
   end
   it "is invalid without a body" do
-    comment = Comment.new(body: nil)
-    comment.valid?
-    expect(comment.errors[:body]).to include("can't be blank")
+    comment = Comment.new(body: "")
+    # comment.valid?
+    # expect(comment.errors[:body]).to include("can't be blank")
+    expect(comment).to_not be_valid
   end
   it "should have many comments" do                 #Checking association 
     t = Comment.reflect_on_association(:comments)

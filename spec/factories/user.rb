@@ -8,7 +8,7 @@ FactoryGirl.define do
     password_confirmation "password"
     name "Aman"
     confirmed_at Date.today
-    approved 'T'
+    approved 'true'
     role_id "1"
   end
 

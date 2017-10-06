@@ -2,13 +2,13 @@ require 'rails_helper'
 
 describe  PostsController do 
 
-	# describe 'GET #new' do
- #    it "requires login" do
- #    	FactoryGirl.create(:group)
- #      get :new
- #      expect(response).to redirect_to new_user_session_path
- #    end
- #  end
+	describe 'GET #new' do
+    it "requires login" do
+    	group = FactoryGirl.create(:group)
+    	post = FactoryGirl.create(:post)
+      expect(response).to redirect_to new_user_session_path
+    end
+  end
 
  #  describe "POST #create" do  
 

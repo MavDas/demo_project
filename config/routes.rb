@@ -19,10 +19,6 @@ Rails.application.routes.draw do
         resources :comments
       end
     end
-    member do
-      patch 'remove_member'
-      patch 'add_member'
-    end
   end
 
   resources :events, only: [:show]

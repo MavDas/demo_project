@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :role do
-    name "superadmin"
+    name "Superadmin"
     id "1"
   end
 end 

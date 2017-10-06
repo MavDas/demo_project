@@ -14,11 +14,11 @@ RSpec.describe  UsersController, :type => :controller do
     login_user
   	it "renders the index template" do
       get :index
-      expect(response).to redirect_to root_path
+      expect(response).to have_http_status(200)
     end
     
     it "matches the index of users" do
-      expect(:get => '/admin/users').to route_to("format"=>"html", "controller"=>"users", "action"=>"index")
+      expect(:get => '/admin/users').to route_to("controller"=>"users", "action"=>"index")
     end
   end
 end    

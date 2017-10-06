@@ -8,7 +8,17 @@ RSpec.describe  GroupsController, :type => :controller do
       expect(response).to redirect_to new_user_session_path
     end
   end
-
+  # describe "POST create" do
+  #   login_user
+  #   it "sets a flash[:notice] message" do
+  #     group = FactoryGirl.create(:group)
+  #     expect(flash[:notice]).to be_present
+  #   end
+  #   it "should redirect" do
+  #     group = FactoryGirl.create(:group)
+  #     expect(response).to redirect_to(groups_path)
+  #   end
+  # end
   describe "POST #create" do
     it "requires login" do
       post :create, post: FactoryGirl.attributes_for(:post)
@@ -55,6 +65,7 @@ RSpec.describe  GroupsController, :type => :controller do
       group = FactoryGirl.create(:group)
       get :show, id: group
     end
+    
     it "renders the #show view" do
       get :show, id: FactoryGirl.create(:group)
       expect(response).to render_template("show")
